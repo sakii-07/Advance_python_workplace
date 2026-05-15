@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May 15</title>
+</head>
+
+<body>
+
+    <!-- HTML list : collectin of related group of item 
+            Types of html list : 1) ordered list - order list start with <ol> tag
+                                                    declare group of items using <li>
+                                                    There are two main attributs in ordered list
+                                                                1) type : declare index
+                                                                                1) numbers : 1 (By default)
+                                                                                2) Alphabets: "A","a"
+                                                                                3) Roman numbers : "I","i"
+                                                                2) start : decide start index
+                                 2) Unordered list
+                                 3) data list
+
+                2) Unordered list : start with <ul>
+                                    declare group of element using <li>
+                                        unoredred list have one attribute
+                                            1) type : none, square, circle, dict
+                                    short cut : ul>li*4
+
+                3) Data list : start with <dl> tag
+                                <dd> -- data description
+                        syntax: <dl>/dl>
+                                <dd></dd>
+                        
+                4) Nested list : collection of ordered and unordered list
+     -->
+
+    <center>
+        <h2>Ordered list</h2>
+    </center>
+    <ol type="1" start="10">
+        <li>Python</li>
+        <li>Html</li>
+        <li>Mysql</li>
+        <li>Django</li>
+    </ol>
+
+    <center>
+        <h2>Unordered list</h2>
+    </center>
+    <ul type="square">
+        <li>Green Tea</li>
+        <li>Black Tea</li>
+        <li>Ginger Tea</li>
+        <li>Rose Tea</li>
+    </ul>
+
+    <center>
+        <h2>Data list</h2>
+    </center>
+    <dl>Python</dl>
+    <dd>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum similique repellat quaerat recusandae expedita
+        quae illum dignissimos at qui debitis quisquam numquam, voluptate, vitae quam magnam unde itaque, dolorum vel!
+    </dd>
+
+    <dl>Html</dl>
+    <dd>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum similique repellat quaerat recusandae expedita
+        quae illum dignissimos at qui debitis quisquam numquam, voluptate, vitae quam magnam unde itaque, dolorum vel!
+    </dd>
+
+    <center><h2>Nested list</h2></center>
+    <ul type="none">
+        <li>Introduction of python</li>
+        <ol>
+            <li>History</li>
+            <li>Variable</li>
+            <li>Opreators</li>
+            <ol type="i">
+                <li>Arithmentic operators</li>
+                <li>Assinment operators</li>
+                <li>Logical operators</li>
+                <li>Special operators</li>
+            </ol>
+            <li>flow Control statement</li>
+            <ol type="i">
+                <li>Control statemnet</li>
+                <li>Looping statement</li>
+                <li>Transfer statement</li>
+            </ol>
+        </ol>
+    </ul>
+
+    <!-- Anchor tag / Hyperlink tag : declare using <a>
+                                      Redirect html page or application
+                                      href -- hypertext reference
+                                      inside href we can provide url and file path also 
+                                            url -- uniform resource locator
+                syntax : <a href="URL / file path">
+
+                if we want to open page on new tab then use :
+                        target attribute : decide to open content on same tab or new tab
+                        values : _self (by default), _blank, _top, _parent
+     -->
+
+     <a href="may14.html">Html introduction</a> &nbsp;
+
+     <marquee behavior="scroll,alternate,slide" direction="left,right,up,down" scrollamount="30">Slow scrolleing</marquee>
+
+</body>
+
+</html>

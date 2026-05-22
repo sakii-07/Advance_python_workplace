@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - 1</title>
+    <style>
+
+        body{
+            background-color: #1595c9;
+        }
+        .box{
+            margin: 50px auto;
+            text-align: center;
+            width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        #head{
+            font-weight: 900;
+        }
+        input{
+            width: 350px;
+            border: none;
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        #btn{
+            padding: 10px 35px;
+            border: none;
+            background-color: #1595c9;
+            color: white;
+            margin: auto;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1 id="head">Registation Form</h1>
+        <input type="text" placeholder="Name*" required>
+        <input type="email" placeholder="Email*" required>
+        <input type="number" placeholder="Phone*" required>
+        <input type="text" list="sub" placeholder="Subject*" required>
+        <datalist id="sub">
+            <option value="Java">
+            <option value="Python">
+            <option value="SQL">
+            <option value="React">
+        </datalist>
+        <input type="Message" placeholder="Message*" required><br>
+        <button id="btn">Submit</button>
+    </div>
+    
+</body>
+</html>

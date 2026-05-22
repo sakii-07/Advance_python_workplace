@@ -1,0 +1,39 @@
+p{
+    color: red;
+    border-width: 6px;
+    border-style: ridge;
+    border-color: turquoise;
+
+    border-top-style: dashed;
+    border-bottom-style: dotted;
+    border-left-style: double;
+
+    border-top-width: 2px;
+    border-bottom-width: 10px;
+    border-left-width: 0.8rem;
+
+    border-top-color: green;
+    border-bottom-color: yellow;
+    border-left-color: brown;
+}
+
+h1{
+    border: 3px solid green;
+    /* width: fit-content; */
+    width: 80%;
+
+    border-radius: 20px; /* All sides */
+
+    border-radius: 20px 40px; /* TL--BR TR--BL*/
+    border-radius: 20px 40px 60px; /*TL TR BR BL=40px*/
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+
+    margin: auto;
+
+    border-radius: 50%;
+}

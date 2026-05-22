@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - 4</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body{
+        background-color: azure;
+    }
+    .box{
+        width: 550px;
+        border: 2px solid white;
+        border-radius: 10px;
+        margin: 50px auto;
+        background-color: white;
+        border-radius: 10px;
+        text-align: center;
+        border-radius: 20px;
+        padding: 30px 30px 50px 30px;
+    }
+    #inp1{
+        border: none;
+        padding: 10px;
+        font-size: 15px;
+        border: 3px solid #0ca7e4;
+        border-radius: 10px;
+        margin-right: 3%;
+        width: 350px;
+    }
+    #btn{
+        color: white;
+        padding: 10px;
+        background-color: rgb(33, 165, 218);
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    #icon{
+        color: green;
+        font-size: 25px;
+    }
+    #icon:hover{
+        border: 3px solid rgb(27, 149, 198);
+        border-radius: 5px;
+        padding: 10px;
+    }
+    #btn1{
+        border: none;
+        background-color: red;
+        padding: 5px 10px;
+        border-radius: 10px;
+        color: white;
+    }
+    td{
+        padding: 10px 50px;
+    }
+    table,th,td{
+        border-bottom: 2px dashed gray;
+        border-collapse: collapse;
+    }
+    table{
+        margin: 20px auto;
+    }
+    #td{
+        text-decoration-line: line-through;
+    }
+</style>
+<body>
+
+    <div class="box">
+        <h1 id="head">Task Manager</h1>
+        <div>
+            <input id="inp1" type="text" placeholder="What needs to be done?">
+            <button id="btn">Add Task</button>
+            <table>
+                <tr>
+                    <td id="icon"><i class="fa fa-check"></i></td>
+                    <td id="td">Task A</td>
+                    <td><button id="btn1">Remove</button></td>
+                </tr>
+                 <tr>
+                    <td id="icon"><i class="fa fa-check"></i></td>
+                    <td>Task B</td>
+                    <td><button id="btn1">Remove</button></td>
+                </tr>
+                 <tr>
+                    <td id="icon"><i class="fa fa-check"></i></td>
+                    <td id="td">Task C</td>
+                    <td><button id="btn1">Remove</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

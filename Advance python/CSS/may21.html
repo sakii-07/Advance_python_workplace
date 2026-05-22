@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+        /* Background property */
+        body{
+            /* background-color: red; */
+            background-image: linear-gradient(red,yellow,pink,black);
+            background-repeat: no-repeat;
+            background-image: url();
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Font properties */
+        h1{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: medium;
+            font-weight: 100;
+            font-style: italic;
+            font-display: swap;
+            font-variant: small-caps;
+            color: blueviolet;
+        }
+
+        /* Display priperties */
+        div{
+            border: 2px solid gray;
+            width: 25%;
+            margin: 20px;
+            padding: 20px;
+            display: inline-block;
+            background-color: aqua;
+        }
+        a{
+            color: white;
+            font-weight: 700;
+            padding: 2%;
+            border: 2px solid red;
+            background-color: red;
+            text-decoration: none;
+        }
+        h3{
+            display: inline;
+            border: 2px solid green;
+            background-color: green;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Position -- Types of position
+                            1) static
+                            2) fixed --  does not aquires own space and fixed on spesific position
+                            3) relative -- aquires its own space and move from own space to another posotion
+                            4) absolute -- does not aquires space and move from parent or brower position
+                            5) sticky -- it aquires its own space and stick on specific position
+    -->
+
+    <h1>Font property</h1>
+
+    <div>
+        <a href="">Python</a>
+        <a href="">Java</a>
+        <a href="">Sql</a>
+    </div>
+    <div>
+        <a href="">Tea</a>
+        <a href="">Black Tea</a>
+        <a href="">Green Tea</a>
+    </div>
+    <div>
+        <a href="">Candidate</a>
+        <a href="">Student</a>
+        <a href="">Employee</a>
+    </div>
+
+    <br>
+
+    <h3>Home</h3>
+    <h3>About</h3>
+    <h3>Contact</h3>
+    
+</body>
+</html>

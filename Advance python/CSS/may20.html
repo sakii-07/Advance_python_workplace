@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="border.css">
+
+    <style>
+        /* Element selector*/
+        h2 {
+            color: #19dc19;
+        }
+
+        /* Id selector */
+        #id1 {
+            color: blueviolet;
+        }
+
+        /* Class selector */
+        .class1 {
+            color: brown;
+        }
+
+        h4.class1 {
+            /*style only single element using class attribute */
+            color: black;
+        }
+
+        /* Group selector */
+        h5,
+        a {
+            color: cadetblue;
+        }
+
+        /* Nested selector */
+        ol li {
+            color: teal;
+        }
+
+        /* Universal selector */
+        * {
+            color: rgb(233, 236, 23);
+        }
+
+        /* Pseudo class -- uses single collan */
+        h2:hover {
+            color: red;
+        }
+
+        /* Pseudo Element -- uses double collan */
+        h1::first-letter {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CSS - sacsading style sheet --- style html pages
+
+    Types of css --- 
+        1) inline css -- using style attribute
+                ex. <h1 style="color: red;"> Inline CSS </h1>
+        
+        2) Internal CSS -- uses <style> tag inside <haed> tag
+                ex. <head>
+                        <style>
+                            selector{
+                                property: value;
+                            }
+                        </style>
+                    </head>
+
+        3) External CSS : create one file with .css extention -- use <link> tag
+                ex. <link rel="stylesheet" href="filename.css">
+                style.css -- external file
+                    selector{
+                        property: value
+                    }
+
+
+    selector -- It select html element
+
+    types of selector -- 
+
+                    1) Element selector 
+                    2) Id selector
+                    3) Class selector
+                    4) Group selector
+                    5) Nested selector
+                    6) Universal selector
+     -->
+
+    <h1 style="color: red;">Inline CSS</h1>
+
+    <h2>Internal CSS</h2>
+
+    <h2 id="id1">Id selector</h2>
+
+    <h2 class="class1">Class selector h2</h2>
+
+    <h4 class="class1"> Class seletor h4</h4>
+
+    <h5>Group selector</h5>
+    <a href="#"> Group selector </a>
+
+    <ol>
+        <li>Black Tea</li>
+        <li>Green Tea</li>
+        <li>Tea</li>
+    </ol>
+
+    <!-- Border Property -- 1) border-color
+                            2) border-style
+                            3) border-width
+                            4) border-redius
+
+                border : 3px solid red --- border : width style color
+    
+    -->
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate at doloremque, quasi natus reiciendis
+        asperiores, cumque blanditiis porro error dolorem eius consectetur ipsum adipisci obcaecati assumenda, qui nihil
+        autem hic.</p>
+
+    <h1>Border Property</h1>
+
+
+    <!-- Box model : Box model is combination of cntent, border, margin and padding
+                padding -- space between border and content
+                margin -- space outside the border
+    
+    -->
+
+    <div>
+
+    </div>
+
+</body>
+
+</html>

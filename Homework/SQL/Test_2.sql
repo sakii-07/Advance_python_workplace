@@ -24,6 +24,7 @@ select max(salary) as "Max salary" from employee where profile = "test";
 select * from employee where experiance = (select avg(experiance) from employee);
 
 -- 5) As a user I want to see the name of highest paid employee.
+select name from employee order by salary desc limit 1;
 select name from employee where salary = (select max(salary) from employee);
 
 -- 6) As a user, I want to see the name and experience of lowest paid employee.

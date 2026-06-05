@@ -21,7 +21,7 @@ select sum(salary) as "Total salary" from employee ;
 select max(salary) as "Max salary" from employee where profile = "test";
 
 -- 4) As a user I want to get the average experience level of employees.
-select * from employee where experiance = (select avg(experiance) from employee);
+select avg(experiance) from employee;
 
 -- 5) As a user I want to see the name of highest paid employee.
 select name from employee order by salary desc limit 1;
@@ -45,6 +45,7 @@ select max(salary) as "Second Max salary" from employee where salary < (select m
 
 -- 11)  As a user I want to get the second lowest salary of employee
 select salary as "Second min salary" from employee order by salary limit 1,1;
+select min(salary) as "Second lowest salary" from employee where salary > (select min(salary) from employee);
 
 -- 12) As a user, I want to calculate the average salary of employees those are belongs to dev profile.
 select avg(salary) from employee where profile = "dev";

@@ -172,13 +172,38 @@ def search_records():
         print(e)
 
 def update_records():
-    # table = input("Enter table name : ")
-    # n = int(input("Enter the number of columns to update"))
+    try:
+        table = input("Enter table name : ")
+        n = int(input("Enter the number of columns to update : "))
 
-    # column = []
-    # for i in range(n):
-    #     col = input("Enter the column name : ")
-    pass
+        columns = []
+        values = []
+
+        for i in range(n):
+            col = input("Enter column name : ")
+            val = input(f"Enter new value for {col} : ")
+
+            columns.append(col)
+            values.append(val)
+
+        condition_col = input("Enter condition column : ")
+        condition_val = input("Enter condition value : ")
+
+        query = f"UPDATE {table} SET "
+
+        updates = []
+        for col, val in zip(columns, values):
+            updates.append(f"{col}='{val}'")
+
+        query += ", ".join(updates)
+        query += f" WHERE {condition_col}='{condition_val}'"
+
+        cu.execute(query)
+        conn.commit()
+        print("Column data updated successfully ... ")
+    except Exception as e:
+        print(e)
+
 
 def delete_record():
     try : 
@@ -331,6 +356,14 @@ def sort_desc():
     except Exception as e:
         print(e)
 
+def manual_query():
+    try:
+        query = input("Enter query : ")
+        cu.execute(query)
+        conn.commit()
+    except Exception as e:
+        print(e)
+
 def command():
      print("""
     ========== DATABASE OPERATIONS =========
@@ -364,8 +397,10 @@ def command():
 
         23. Sort Ascending
         24. Sort Descending
+           
+        25. Insert query
 
-        25. Exit
+        26. Exit
         """)
 
 
@@ -422,6 +457,8 @@ while True:
     elif ch == 24:
         sort_desc()
     elif ch == 25:
+        manual_query()
+    elif ch == 26:
         break
     else:
         print("Invalid choice")

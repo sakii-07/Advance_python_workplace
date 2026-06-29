@@ -358,9 +358,12 @@ def sort_desc():
 
 def manual_query():
     try:
-        query = input("Enter query : ")
+        query = input("Enter select query : ")
         cu.execute(query)
+        for data in cu.fetchall():
+            print(data)
         conn.commit()
+        print()
     except Exception as e:
         print(e)
 

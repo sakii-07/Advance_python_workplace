@@ -1,0 +1,57 @@
+# Exploratory Data Analysis (EDA) Mini Project Report
+
+## Submitted By
+
+Name: Sakshi Jagtap
+Batch No.: 1319
+
+## Project Title
+
+Superstore Sales Exploratory Data Analysis (EDA)
+
+## Objective
+
+The objective of this project is to analyze Superstore sales data to identify business trends, customer behavior, product performance, regional sales, and profitability using Python-based data analysis techniques.
+
+## Tools & Technologies
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
+
+## Tasks Performed
+
+* Imported and explored the dataset.
+* Cleaned the data by checking missing values and correcting data types.
+* Converted date columns into proper datetime format.
+* Performed descriptive statistics.
+* Analyzed sales, profit, customers, products, categories, and regions.
+* Created multiple visualizations including:
+
+  * Monthly Sales Trend
+  * Sales by Category
+  * Sales by Region
+  * Profit Analysis
+  * Customer Analysis
+  * Product Analysis
+* Generated business insights and recommendations based on the analysis.
+
+## Key Insights
+
+* Identified the highest-selling products.
+* Determined the most profitable categories and sub-categories.
+* Analyzed regional and state-wise sales and profits.
+* Found monthly sales trends over time.
+* Identified top-performing customers based on sales.
+* Compared sales and profit across different segments.
+
+## Conclusion
+
+The Exploratory Data Analysis helped uncover important business insights regarding sales performance, customer behavior, and profitability. These insights can support better business decisions, inventory management, marketing strategies, and revenue growth.
+
+## GitHub Repository
+
+https://github.com/sakii-07/Advance_python_workplace/blob/main/Advance%20python/Data%20Science/Mini%20project/eda.ipynb

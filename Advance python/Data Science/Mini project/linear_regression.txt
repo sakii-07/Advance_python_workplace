@@ -1,0 +1,73 @@
+# Linear Regression Project Report
+
+## Project Title
+
+Sales Prediction using Regression Models
+
+## Objective
+
+The objective of this project is to predict product sales using historical Superstore data and compare multiple regression algorithms to identify the best-performing model.
+
+## Dataset
+
+The project uses the Superstore dataset containing product, customer, shipping, and sales-related information.
+
+## Data Preprocessing
+
+* Handled missing and inconsistent values.
+* Converted the **Sales** column into numeric format.
+* Selected relevant features for prediction.
+* Applied Min-Max Scaling on numerical features.
+* Removed outliers using the IQR (Interquartile Range) method.
+* Split the dataset into training and testing sets (80:20).
+
+## Features Used
+
+* Category
+* Sub Category
+* Region
+* State
+* Segment
+* Quantity
+* Discount
+* Shipping Cost
+* Ship Mode
+* Market
+* Order Priority
+* Year
+
+## Target Variable
+
+* Sales
+
+## Models Implemented
+
+1. Linear Regression
+2. Decision Tree Regressor
+3. Random Forest Regressor
+
+## Model Evaluation
+
+| Model             |   MAE |  RMSE | R² Score |
+| ----------------- | ----: | ----: | -------: |
+| Linear Regression | 28.18 | 45.02 |   0.6317 |
+| Decision Tree     | 29.80 | 53.37 |   0.4824 |
+| Random Forest     | 21.83 | 38.90 |   0.7250 |
+
+## Best Model
+
+Random Forest Regressor achieved the best performance with:
+
+* Lowest MAE: 21.83
+* Lowest RMSE: 38.90
+* Highest R² Score: 72.50%
+
+This indicates that Random Forest predicts sales more accurately than Linear Regression and Decision Tree for this dataset.
+
+## Residual Analysis
+
+Residual analysis was performed to evaluate prediction errors. The residuals were randomly distributed around zero, indicating that the selected regression model provides a satisfactory fit to the data.
+
+## Conclusion
+
+After comparing all regression models, Random Forest Regressor was selected as the final model because it delivered the highest prediction accuracy and the lowest prediction error. The project demonstrates the complete machine learning workflow, including data preprocessing, feature scaling, outlier handling, model training, evaluation, comparison, and interpretation of results.

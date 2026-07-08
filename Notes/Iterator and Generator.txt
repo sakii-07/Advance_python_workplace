@@ -1,0 +1,413 @@
+1. What is an Iterator in Python?
+Ideal Answer
+
+An iterator is an object that allows us to traverse through elements of a collection one item at a time without exposing the internal implementation.
+
+It follows the Iterator Protocol, meaning it implements two methods:
+
+__iter__()
+__next__()
+
+Whenever next() is called, it returns the next element. If no elements remain, it raises StopIteration.
+
+nums = [10, 20, 30]
+
+it = iter(nums)
+
+print(next(it))
+print(next(it))
+print(next(it))
+
+Output
+
+10
+20
+30
+
+Calling
+
+next(it)
+
+raises
+
+StopIteration
+Real-world Example
+
+Reading records from a database one row at a time instead of loading all rows into memory.
+
+Follow-up Questions
+What methods must an iterator implement?
+What exception ends iteration?
+Can every iterable be an iterator?
+2. What is an Iterable?
+Ideal Answer
+
+An iterable is any object that can return an iterator.
+
+Examples:
+
+List
+Tuple
+String
+Dictionary
+Set
+
+They implement
+
+__iter__()
+
+Example
+
+nums = [1,2,3]
+
+it = iter(nums)
+
+Here,
+
+list = iterable
+it = iterator
+Follow-up
+
+Difference between iterable and iterator?
+
+3. Difference between Iterable and Iterator?
+Iterable	Iterator
+Can be looped	Actually performs iteration
+Uses iter()	Uses next()
+Doesn't remember position	Remembers current position
+Can create multiple iterators	Single traversal
+
+Example
+
+nums = [1,2,3]
+
+iter1 = iter(nums)
+iter2 = iter(nums)
+
+Both start from beginning.
+
+4. What is a Generator?
+Ideal Answer
+
+A generator is a special type of iterator created using a function containing the yield keyword.
+
+Unlike normal functions, generators produce values one at a time, making them memory efficient.
+
+Example
+
+def numbers():
+    yield 1
+    yield 2
+    yield 3
+
+g = numbers()
+
+print(next(g))
+print(next(g))
+print(next(g))
+
+Output
+
+1
+2
+3
+Real-world Example
+
+Reading a 20GB log file line by line.
+
+Follow-up
+Why is generator memory efficient?
+Difference between yield and return?
+5. Difference between yield and return?
+return	yield
+Ends function	Pauses function
+Returns one value	Returns multiple values one at a time
+Cannot resume	Can resume
+Function finishes	Function state is preserved
+
+Example
+
+def test():
+    yield 1
+    yield 2
+6. Why are Generators Memory Efficient?
+Ideal Answer
+
+Generators don't store all values in memory.
+
+They generate values only when needed (lazy evaluation).
+
+Instead of creating a large list,
+
+nums = [i for i in range(100000000)]
+
+use
+
+nums = (i for i in range(100000000))
+
+Only one number exists in memory at a time.
+
+Real-world Example
+
+Processing millions of customer records.
+
+Follow-up
+
+What is Lazy Evaluation?
+
+7. What is Lazy Evaluation?
+Ideal Answer
+
+Lazy evaluation means values are created only when requested.
+
+Generators work using lazy evaluation.
+
+Example
+
+gen = (x*x for x in range(1000000))
+
+Nothing is calculated until
+
+next(gen)
+8. What is Generator Expression?
+Ideal Answer
+
+Generator expression is a shorter way to create generators.
+
+List comprehension
+
+[x*x for x in range(5)]
+
+Generator expression
+
+(x*x for x in range(5))
+
+Difference
+
+List stores everything
+Generator generates one by one
+Follow-up
+
+Difference between generator expression and list comprehension?
+
+9. Difference between List Comprehension and Generator Expression?
+List Comprehension	Generator Expression
+Uses []	Uses ()
+Stores all values	Generates one by one
+More memory	Less memory
+Faster for small data	Better for large data
+10. Can a Generator be Iterated Multiple Times?
+Ideal Answer
+
+No.
+
+Once exhausted, a generator cannot restart.
+
+Example
+
+gen = (x for x in range(3))
+
+for i in gen:
+    print(i)
+
+for i in gen:
+    print(i)
+
+Second loop prints nothing.
+
+Follow-up
+
+How can we reuse a generator?
+
+Answer:
+
+Create a new generator.
+
+11. How do Generators Maintain Their State?
+Ideal Answer
+
+When yield executes, Python saves:
+
+Local variables
+Execution position
+Current state
+
+Next next() resumes exactly from there.
+
+Example
+
+def test():
+    print("A")
+    yield 1
+
+    print("B")
+    yield 2
+12. What is StopIteration?
+Ideal Answer
+
+When an iterator or generator has no more values, Python raises
+
+StopIteration
+
+Example
+
+g = iter([1])
+
+print(next(g))
+print(next(g))
+
+Second call raises
+
+StopIteration
+13. How does for Loop Work Internally?
+Ideal Answer
+
+Internally,
+
+for x in nums:
+
+becomes
+
+it = iter(nums)
+
+while True:
+    try:
+        x = next(it)
+        print(x)
+    except StopIteration:
+        break
+
+Interviewers love this question.
+
+14. Can We Create Our Own Iterator?
+Ideal Answer
+
+Yes.
+
+By implementing
+
+__iter__()
+__next__()
+
+Example
+
+class Count:
+
+    def __init__(self):
+        self.num = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.num <= 5:
+            value = self.num
+            self.num += 1
+            return value
+        raise StopIteration
+Follow-up
+
+Why raise StopIteration?
+
+15. Can We Create Our Own Generator?
+Ideal Answer
+
+Yes.
+
+Simply use
+
+yield
+
+Example
+
+def even():
+
+    for i in range(2,11,2):
+        yield i
+16. Iterator vs Generator?
+Iterator	Generator
+Class based	Function based
+Implements __iter__() and __next__()	Uses yield
+More code	Less code
+Manual state management	Automatic state management
+Harder to write	Easier to write
+Interview Tip
+
+Every generator is an iterator, but not every iterator is a generator.
+
+17. What Happens if We Call next() Beyond Generator?
+Ideal Answer
+
+It raises
+
+StopIteration
+
+Example
+
+def gen():
+    yield 10
+
+g = gen()
+
+print(next(g))
+print(next(g))
+18. Can We Use return Inside Generator?
+Ideal Answer
+
+Yes.
+
+But
+
+return
+
+ends the generator immediately.
+
+Example
+
+def test():
+    yield 1
+    return
+    yield 2
+
+Output
+
+1
+Follow-up
+
+Difference between yield and return inside generators?
+
+19. When Should We Use Generators?
+Ideal Answer
+
+Generators are useful when:
+
+Processing huge files
+Streaming data
+Reading logs
+Database records
+API pagination
+Infinite sequences
+Large datasets
+Real-world Example
+def read_file(file):
+
+    with open(file) as f:
+
+        for line in f:
+            yield line
+
+Only one line stays in memory.
+
+20. Explain Generator and Iterator with One Real-world Example.
+Ideal Answer
+
+Suppose Netflix has 10 million movies.
+
+If Netflix sends all movie data at once, it consumes huge memory.
+
+Instead,
+
+Iterator gives one movie at a time.
+Generator creates each movie only when requested.
+
+This saves memory and improves performance.

@@ -1,0 +1,431 @@
+1. What is Multithreading?
+Ideal Answer
+
+Multithreading is a technique where multiple threads execute within a single process simultaneously.
+
+A thread is the smallest unit of execution. All threads of a process share the same memory, resources, and variables but execute independently.
+
+Multithreading improves application responsiveness and is mainly used for I/O-bound tasks.
+
+Real-world Example
+
+A web browser:
+
+One thread downloads data.
+One thread renders the webpage.
+One thread plays audio/video.
+
+All work simultaneously.
+
+Follow-up Questions
+
+Q1. What is a thread?
+
+A thread is the smallest execution unit inside a process.
+
+Q2. Do threads share memory?
+
+Yes.
+
+2. What is the difference between Process and Thread?
+Ideal Answer
+Process	Thread
+Independent program	Part of a process
+Own memory	Shared memory
+Heavyweight	Lightweight
+Communication is slower	Communication is faster
+Creating process is costly	Creating thread is cheaper
+Real-world Example
+
+Microsoft Word
+
+Process = Word Application
+
+Threads
+
+Spell checker
+Auto save
+UI
+Printing
+Follow-up
+
+Which is faster?
+
+Thread creation is faster.
+
+3. Why do we use Multithreading?
+Ideal Answer
+
+We use multithreading to
+
+Improve responsiveness
+Execute multiple tasks together
+Reduce waiting time
+Handle background operations
+Improve performance of I/O-bound programs
+
+Example
+
+Downloading files while user continues working.
+
+Follow-up
+
+Does multithreading always improve performance?
+
+No.
+
+It improves mainly I/O-bound applications.
+
+4. What are I/O-bound and CPU-bound tasks?
+Ideal Answer
+I/O-bound
+
+Program spends time waiting.
+
+Examples
+
+API calls
+Reading files
+Database queries
+
+Multithreading works well.
+
+CPU-bound
+
+Program spends time doing calculations.
+
+Examples
+
+Machine Learning
+Image processing
+Encryption
+
+Due to GIL, multithreading doesn't significantly improve CPU-bound tasks.
+
+Follow-up
+
+Which is better for CPU-bound tasks?
+
+Multiprocessing.
+
+5. Which module is used for Multithreading?
+Ideal Answer
+
+Python provides
+
+threading
+
+Example
+
+import threading
+Follow-up
+
+Difference between
+
+_thread
+
+and
+
+threading
+
+threading is high-level and recommended.
+
+6. How do you create a Thread?
+Ideal Answer
+
+Using
+
+threading.Thread()
+
+Example
+
+import threading
+
+def display():
+    print("Hello")
+
+t = threading.Thread(target=display)
+
+t.start()
+
+t.join()
+Follow-up
+
+Why start()?
+
+It starts the new thread.
+
+7. What is start()?
+Ideal Answer
+
+start() creates a new thread and internally calls the run() method.
+
+Never call run() directly.
+
+Example
+
+t.start()
+Follow-up
+
+Difference
+
+run()
+
+vs
+
+start()
+
+run()
+
+Normal function call.
+
+start()
+
+Creates a new thread.
+
+8. What is join()?
+Ideal Answer
+
+join() waits until the thread finishes execution.
+
+Example
+
+t.start()
+t.join()
+
+print("Completed")
+
+Without join(), the main thread may finish before the worker thread.
+
+Follow-up
+
+Can join() accept timeout?
+
+Yes.
+
+t.join(5)
+9. What happens if join() is not used?
+Ideal Answer
+
+The main thread does not wait for child threads.
+
+The program may terminate before child threads complete.
+
+Follow-up
+
+Is join() mandatory?
+
+No.
+
+Only when synchronization is needed.
+
+10. What is the Global Interpreter Lock (GIL)?
+Ideal Answer
+
+The GIL is a lock in CPython that allows only one thread to execute Python bytecode at a time.
+
+Because of GIL:
+
+CPU-bound threads cannot execute Python code in true parallel.
+I/O-bound threads still benefit because they release the GIL while waiting.
+Real-world Example
+
+Two threads calculating large prime numbers
+
+Only one thread executes Python bytecode at a time.
+
+Follow-up
+
+Does Python support true parallelism?
+
+For CPU-bound tasks, use multiprocessing.
+
+11. What is Synchronization?
+Ideal Answer
+
+Synchronization ensures that only one thread accesses a shared resource at a time, preventing inconsistent data.
+
+Example
+
+Two threads updating the same bank balance.
+
+Without synchronization:
+
+Balance may become incorrect.
+
+Follow-up
+
+Which object provides synchronization?
+
+Lock.
+
+12. What is Lock?
+Ideal Answer
+
+A Lock prevents multiple threads from accessing shared resources simultaneously.
+
+Example
+
+lock.acquire()
+
+# critical section
+
+lock.release()
+
+Better
+
+with lock:
+    print("Safe")
+Follow-up
+
+What is Critical Section?
+
+The code that accesses shared resources.
+
+13. What is Race Condition?
+Ideal Answer
+
+A race condition occurs when multiple threads modify shared data simultaneously, leading to unpredictable results.
+
+Example
+
+Two ATM machines withdraw money at the same time from the same account.
+
+Follow-up
+
+How to avoid it?
+
+Using Lock.
+
+14. What is Deadlock?
+Ideal Answer
+
+Deadlock happens when two or more threads wait for each other indefinitely, and none can proceed.
+
+Example
+
+Thread A holds Lock1 and waits for Lock2.
+
+Thread B holds Lock2 and waits for Lock1.
+
+Both wait forever.
+
+Follow-up
+
+How can you prevent deadlock?
+
+Acquire locks in a consistent order.
+Keep critical sections short.
+Avoid nested locks when possible.
+Use timeouts when acquiring locks.
+15. What is Daemon Thread?
+Ideal Answer
+
+A daemon thread runs in the background and automatically stops when the main program exits.
+
+Example
+
+Background logging.
+
+t.daemon = True
+Follow-up
+
+Default daemon value?
+
+False.
+
+16. How can you check the current thread?
+Ideal Answer
+import threading
+
+print(threading.current_thread())
+
+To get only the name:
+
+print(threading.current_thread().name)
+Follow-up
+
+How to rename a thread?
+
+t.name = "Worker"
+17. How do you pass arguments to a thread?
+Ideal Answer
+
+Using args.
+
+Example
+
+import threading
+
+def greet(name):
+    print(name)
+
+t = threading.Thread(target=greet, args=("Sakshi",))
+t.start()
+Follow-up
+
+Why is there a comma?
+
+Because a single-element tuple requires a trailing comma.
+
+18. Can multiple threads modify the same variable?
+Ideal Answer
+
+Yes.
+
+Since threads share the same memory, they can access and modify the same variables.
+
+This can cause race conditions if not synchronized.
+
+Follow-up
+
+How do you make it safe?
+
+Use Lock or other synchronization primitives.
+
+19. What synchronization primitives are available in Python?
+Ideal Answer
+
+Python's threading module provides:
+
+Lock
+RLock
+Semaphore
+BoundedSemaphore
+Event
+Condition
+Barrier
+
+Each is designed for different synchronization needs.
+
+Follow-up
+
+Which one is most commonly used?
+
+Lock.
+
+20. When should you use Multithreading instead of Multiprocessing?
+Ideal Answer
+
+Use Multithreading for:
+
+API calls
+File operations
+Database operations
+Network communication
+Web scraping
+
+Use Multiprocessing for:
+
+Image processing
+Machine Learning
+Mathematical computations
+Data analysis
+CPU-intensive tasks
+Follow-up
+
+Can you use both together?
+
+Yes.
+
+Many large applications use multiprocessing for CPU-intensive work and multithreading for I/O tasks.

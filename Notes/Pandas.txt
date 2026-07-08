@@ -1,0 +1,569 @@
+1. What is Pandas?
+Ideal Answer
+
+Pandas is an open-source Python library used for data manipulation and data analysis.
+
+It provides powerful data structures like:
+
+Series (1-dimensional)
+DataFrame (2-dimensional)
+
+It allows us to:
+
+Read data from different files
+Clean data
+Filter data
+Transform data
+Merge datasets
+Perform statistical analysis
+Export processed data
+
+It is built on top of NumPy, so it is fast and efficient.
+
+Real-world Example
+
+Suppose a company has customer data stored in an Excel file.
+
+Using Pandas we can:
+
+Remove duplicate customers
+Fill missing values
+Find total sales
+Generate reports
+Follow-up Questions
+
+Q: Why is Pandas faster than normal Python loops?
+
+Answer:
+
+Because Pandas uses NumPy internally, which performs operations in optimized C code instead of Python loops.
+
+2. What is a Series?
+Ideal Answer
+
+A Series is a one-dimensional labeled array.
+
+It stores:
+
+values
+index
+
+Example
+
+import pandas as pd
+
+s = pd.Series([10,20,30])
+
+Output
+
+0 10
+1 20
+2 30
+
+Think of it as one column of an Excel sheet.
+
+Follow-up
+
+Difference between list and Series?
+
+List	Series
+No index labels	Has index
+Python object	Pandas object
+Less powerful	Supports vectorized operations
+3. What is a DataFrame?
+Ideal Answer
+
+A DataFrame is a two-dimensional labeled data structure.
+
+It consists of:
+
+rows
+columns
+
+Each column is a Series.
+
+Example
+
+df = pd.DataFrame({
+    "Name":["A","B"],
+    "Age":[20,25]
+})
+
+Think of it as an Excel sheet or SQL table.
+
+Follow-up
+
+Can DataFrame contain different data types?
+
+Yes.
+
+Example
+
+Name -> string
+
+Age -> integer
+
+Salary -> float
+
+Active -> boolean
+4. How do you read data in Pandas?
+Ideal Answer
+
+We use different functions.
+
+pd.read_csv()
+
+pd.read_excel()
+
+pd.read_json()
+
+pd.read_sql()
+
+pd.read_parquet()
+
+Example
+
+df = pd.read_csv("employees.csv")
+Follow-up
+
+Which is faster: CSV or Parquet?
+
+Parquet is faster and compressed.
+
+5. How do you inspect a DataFrame?
+Ideal Answer
+
+Common methods:
+
+head()
+
+tail()
+
+shape
+
+columns
+
+index
+
+info()
+
+describe()
+
+dtypes
+
+sample()
+
+Example
+
+df.info()
+
+Shows:
+
+columns
+null values
+datatype
+memory usage
+Follow-up
+
+Difference between info() and describe()?
+
+info()
+
+Shows structure.
+
+describe()
+
+Shows statistics.
+
+6. How do you select rows and columns?
+Ideal Answer
+
+Using:
+
+[]
+
+.loc[]
+
+.iloc[]
+
+Examples
+
+df["Age"]
+
+df.loc[0]
+
+df.iloc[0]
+
+df.loc[0,"Age"]
+
+df.iloc[0,1]
+Follow-up
+
+Difference between loc and iloc?
+
+loc
+
+Uses labels.
+
+iloc
+
+Uses integer positions.
+
+7. How do you filter data?
+Ideal Answer
+
+Use boolean indexing.
+
+Example
+
+df[df["Age"] > 25]
+
+Multiple conditions
+
+df[(df["Age"]>25) & (df["Salary"]>50000)]
+Follow-up
+
+Why use & instead of and?
+
+Because Pandas works element-wise on Series. Python's and works only with single boolean values.
+
+8. How do you handle missing values?
+Ideal Answer
+
+Methods:
+
+isnull()
+
+notnull()
+
+dropna()
+
+fillna()
+
+Example
+
+df.fillna(0)
+
+or
+
+df.fillna(df["Age"].mean())
+Real-world Example
+
+Customer age missing
+
+Instead of deleting rows,
+
+replace missing values with average age.
+
+Follow-up
+
+When should you use dropna() instead of fillna()?
+
+Use dropna() when missing rows are very few and not important. Use fillna() when you want to preserve the data.
+
+9. How do you remove duplicate records?
+Ideal Answer
+df.drop_duplicates()
+
+Example
+
+df.drop_duplicates(subset="Email")
+Follow-up
+
+How to count duplicates?
+
+df.duplicated().sum()
+10. What is groupby()?
+Ideal Answer
+
+It groups data and performs aggregation.
+
+Example
+
+df.groupby("Department")["Salary"].mean()
+
+Output
+
+HR
+
+IT
+
+Sales
+
+Average salary of each department.
+
+Real-world Example
+
+Sales report by city.
+
+Follow-up
+
+Which aggregation functions can be used?
+
+sum()
+
+mean()
+
+count()
+
+max()
+
+min()
+
+median()
+
+std()
+
+var()
+
+agg()
+11. What is aggregation?
+Ideal Answer
+
+Aggregation combines multiple values into a single value.
+
+Example
+
+Total Sales
+
+Average Salary
+
+Maximum Marks
+
+Example
+
+df["Salary"].mean()
+Follow-up
+
+Difference between aggregation and transformation?
+
+Aggregation returns fewer rows, while transformation returns the same number of rows.
+
+12. Difference between apply(), map(), and applymap()?
+Ideal Answer
+
+map()
+
+Works only on a Series.
+
+df["Gender"].map({
+    "M":"Male",
+    "F":"Female"
+})
+
+apply()
+
+Works on Series or DataFrame.
+
+df["Age"].apply(lambda x:x+1)
+
+applymap()
+
+Works on every element of a DataFrame.
+
+df.applymap(str)
+Follow-up
+
+Which is faster?
+
+Vectorized operations are faster than apply() because they use optimized underlying implementations.
+
+13. Difference between merge(), join(), and concat()?
+Ideal Answer
+
+merge()
+
+Combines DataFrames using common columns (like SQL JOIN).
+
+join()
+
+Joins using the index.
+
+concat()
+
+Stacks DataFrames vertically or horizontally.
+
+Real-world Example
+
+Orders table
+
+Customers table
+
+Merge both using Customer ID.
+
+Follow-up
+
+Types of merge?
+
+Inner
+Left
+Right
+Outer
+14. What is Pivot Table?
+Ideal Answer
+
+Pivot table summarizes data.
+
+Example
+
+pd.pivot_table(
+    df,
+    values="Sales",
+    index="City",
+    aggfunc="sum"
+)
+Follow-up
+
+Difference between groupby() and pivot table?
+
+Pivot tables are easier for multidimensional summaries, while groupby() offers more flexibility for data processing.
+
+15. What is value_counts()?
+Ideal Answer
+
+Counts unique values.
+
+Example
+
+df["City"].value_counts()
+
+Output
+
+Pune
+
+Mumbai
+
+Delhi
+Follow-up
+
+Normalize?
+
+value_counts(normalize=True)
+
+Returns percentages (proportions).
+
+16. Difference between loc[] and iloc[]?
+Ideal Answer
+loc	iloc
+Label based	Position based
+Uses names	Uses index numbers
+
+Example
+
+df.loc[2]
+
+df.iloc[2]
+Follow-up
+
+Can loc select multiple rows?
+
+Yes.
+
+df.loc[2:5]
+17. How do you sort data?
+Ideal Answer
+df.sort_values("Salary")
+
+Descending
+
+ascending=False
+
+Sort index
+
+sort_index()
+Follow-up
+
+Multiple columns?
+
+df.sort_values(
+["Dept","Salary"]
+)
+18. What is vectorization?
+Ideal Answer
+
+Vectorization means performing operations on an entire Series or DataFrame at once instead of looping through each element.
+
+Example
+
+Instead of
+
+for i in df["Age"]:
+
+Use
+
+df["Age"] + 5
+
+Vectorized operations are faster because they rely on optimized NumPy implementations.
+
+Follow-up
+
+Why avoid loops in Pandas?
+
+Loops are slower in Python, while vectorized operations are optimized and easier to read.
+
+19. How do you rename columns?
+Ideal Answer
+df.rename(
+columns={
+"Age":"Employee_Age"
+},
+inplace=True
+)
+Follow-up
+
+Rename all columns?
+
+df.columns=[
+"A",
+"B",
+"C"
+]
+20. How do you save a DataFrame?
+Ideal Answer
+df.to_csv()
+
+df.to_excel()
+
+df.to_json()
+
+df.to_sql()
+
+df.to_parquet()
+
+Example
+
+df.to_csv(
+"output.csv",
+index=False
+)
+
+index=False prevents the DataFrame index from being written as a separate column.
+
+Follow-up
+
+Why use index=False?
+
+By default, Pandas writes the index to the output file. If the index is not meaningful, index=False keeps the exported file clean.
+
+Common Advanced Follow-up Questions
+1. Why is Pandas built on NumPy?
+NumPy provides efficient array operations.
+Pandas adds labels, indexing, missing-value handling, and rich data manipulation features on top of NumPy.
+2. Which file format is fastest?
+Parquet → Fastest for analytics, compressed, preserves data types.
+CSV → Human-readable and widely supported, but larger and slower.
+3. Why avoid iterrows()?
+
+Because it iterates row by row in Python, making it much slower than vectorized operations. Prefer vectorized methods, apply(), or itertuples() when iteration is unavoidable.
+
+4. Difference between apply() and vectorization?
+Vectorization: Faster, uses optimized NumPy operations.
+apply(): More flexible for custom logic but generally slower.
+5. How do you improve Pandas performance?
+Use vectorized operations instead of loops.
+Avoid iterrows() when possible.
+Read only required columns with usecols.
+Specify dtype while reading large files.
+Use categorical (category) data types for repetitive strings.
+Prefer Parquet over CSV for large datasets.
+Use merge() efficiently and avoid unnecessary copies.

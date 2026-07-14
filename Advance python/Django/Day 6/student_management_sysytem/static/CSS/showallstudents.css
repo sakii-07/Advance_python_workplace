@@ -1,0 +1,44 @@
+body{
+    background:#f4f6f9;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+}
+
+.card-header{
+    border-radius:15px 15px 0 0 !important;
+    padding:18px;
+}
+
+.card-header h3{
+    margin:0;
+    font-weight:bold;
+}
+
+.table th{
+    text-align:center;
+    vertical-align:middle;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+.table tbody tr:hover{
+    background:#eef5ff;
+}
+
+.btn{
+    border-radius:8px;
+}
+
+.btn-sm{
+    margin:2px;
+}
+
+.table-responsive{
+    overflow-x:auto;
+}

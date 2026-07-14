@@ -1,0 +1,153 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block content %}
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/CSS/registration.css">
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8 col-md-10">
+
+            <div class="card shadow-lg border-0">
+
+                <div class="card-header text-center bg-primary text-white">
+                    <h2>Update Student</h2>
+                    <p class="mb-0">Student Management System</p>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Username</label>
+                                <input type="text" class="form-control" placeholder="Enter Username" name="username" required value="{{students.username}}">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" placeholder="Enter Password" name="password" value="{{students.password}}">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" placeholder="Enter First Name" name="fname" value="{{students.fname}}">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Last Name" name="lname" value="{{students.lname}}">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="Enter Email" name="email" value="{{students.email}}">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Mobile Number</label>
+                                <input type="tel" class="form-control" placeholder="Enter Mobile Number" name="mobile" value="{{students.mobile}}">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" name="dob" value="{{students.dob}}">
+                            </div>
+
+                           <div class="col-md-6 mb-3">
+                                <label class="form-label">Gender</label>
+
+                                <select class="form-select" name="gender" value="{{students.gender}}">
+                                    <option value="" selected disabled>Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" name="address" value="{{students.address}}">
+
+                            <!-- <textarea rows="3" class="form-control" placeholder="Enter Address" name="address" value="{{students.address}}"></textarea> -->
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Course</label>
+
+                                <select class="form-select" name="course" value="{{students.course}}">
+                                    <option value="" selected disabled>Select Course</option>
+                                    <option value="B.Tech">B.Tech</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="BBA">BBA</option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="MBA">MBA</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Semester</label>
+
+                                <select class="form-select" name="semester" value="{{students.semester}}">
+                                    <option value="" selected disabled>Select Semester</option>
+                                    <option value="1">Semester 1</option>
+                                    <option value="2">Semester 2</option>
+                                    <option value="3">Semester 3</option>
+                                    <option value="4">Semester 4</option>
+                                    <option value="5">Semester 5</option>
+                                    <option value="6">Semester 6</option>
+                                    <option value="7">Semester 7</option>
+                                    <option value="8">Semester 8</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="text-center mt-4">
+
+                            <button class="btn btn-primary px-5" formaction="{% url 'showstudentforupdate' %}">
+                                Show Details
+                            </button>
+
+                            <button class="btn btn-primary px-5" formaction="{% url 'update' %}">
+                                Update
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    <h6 style="color: green; text-align: center;">{{msg}}</h6>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{%endblock%}

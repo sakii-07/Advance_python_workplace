@@ -1,0 +1,85 @@
+{% extends 'Home/home_navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/user/update_user.css' %}">
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-5 col-md-7 col-sm-10">
+
+            <div class="card shadow profile-card">
+
+                <div class="card-header text-center">
+                    <h3 class="mb-0">Update Profile</h3>
+                </div>
+
+                <div class="card-body">
+
+                    {% if msg %}
+                    <div class="alert alert-success text-center">
+                        {{ msg }}
+                    </div>
+                    {% endif %}
+
+                    <form action="{% url 'updateprofile'%}" method="post">
+
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text"
+                                   name="username"
+                                   class="form-control"
+                                   value="{{ user.username }}"
+                                   readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="text"
+                                   name="password"
+                                   class="form-control"
+                                   value="{{ user.password }}"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Mobile Number</label>
+                            <input type="text"
+                                   name="mobile"
+                                   class="form-control"
+                                   value="{{ user.mobile }}"
+                                   required>
+                        </div>
+
+                        <div class="text-center mt-4">
+
+                            <button type="submit"
+                                    class="btn btn-success me-2">
+                                Update Profile
+                            </button>
+
+                            <a href="{% url 'getmyprofilepage' %}"
+                               class="btn btn-secondary">
+                                Cancel
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

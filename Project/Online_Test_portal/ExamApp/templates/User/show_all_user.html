@@ -1,0 +1,79 @@
+{% extends 'Home/home_navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/user/show_all_user.css' %}">
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg">
+
+        <div class="card-header d-flex justify-content-between align-items-center">
+
+            <h3 class="mb-0">All Registered Users</h3>
+
+            <a href="{% url 'getsignuppage' %}" class="btn btn-light">
+                + Add User
+            </a>
+
+        </div>
+
+        <div class="card-body">
+
+            {% if user_db %}
+
+            <div class="table-responsive">
+
+                <table class="table table-hover table-bordered text-center align-middle">
+
+                    <thead>
+
+                        <tr>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Mobile Number</th>
+                            <th>Created At</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for user in user_db %}
+
+                        <tr>
+
+                            <td>{{ user.username }}</td>
+
+                            <td>{{ user.password }}</td>
+
+                            <td>{{ user.mobile }}</td>
+
+                            <td>{{ user.created_at }}</td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            {% else %}
+
+            <div class="alert alert-danger text-center">
+                No Users Found.
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <style>
+
+        .box{
+            width: 25%;
+            margin: auto;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center ;
+            font-size: 30px;
+        }
+        input{
+            margin: 10px;
+            width: 300px;
+            font-size: 25px;
+            border-radius: 10px;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h4>Add User page</h4>
+        <form action="{% url 'adduser'%}">
+
+        <label for=""> Username : </label><br>
+        <input type="text" placeholder="Enter username" name = "username"><br>
+        <input type="submit">
+        <h6>{{msg}}</h6>
+    </form>
+    </div>
+    
+</body>
+</html>

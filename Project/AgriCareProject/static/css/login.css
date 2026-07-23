@@ -1,0 +1,127 @@
+body{
+
+    margin:0;
+    padding:0;
+
+    font-family:'Segoe UI',sans-serif;
+
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.login-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    animation:fadeIn .8s;
+}
+
+.logo{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    background:#198754;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:42px;
+
+    color:#fff;
+
+    margin-bottom:15px;
+}
+
+.form-control{
+
+    height:48px;
+
+    border-radius:10px;
+}
+
+.form-control:focus{
+
+    border-color:#198754;
+
+    box-shadow:0 0 8px rgba(25,135,84,.35);
+}
+
+.login-btn{
+
+    height:48px;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.login-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(25,135,84,.3);
+}
+
+hr{
+
+    margin:25px 0;
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+.login-card{
+
+padding:30px;
+
+}
+
+.logo{
+
+width:70px;
+height:70px;
+
+font-size:35px;
+
+}
+
+}

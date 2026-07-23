@@ -5,7 +5,7 @@ urlpatterns = [
     path('register/', views.Register, name='register'),
 
     path('navbar/', views.Navbar, name='navbar'),
-    path('', views.ShowAllStudents, name='showallstudents'),
+    path('showallstudents/', views.ShowAllStudents, name='showallstudents'),
 
     path('getupdatepage/', views.GetUpdatePage, name='getupdatepage'),
     path('showstudentforupdate/', views.ShowStudentForUpdate, name='showstudentforupdate'),
@@ -15,4 +15,12 @@ urlpatterns = [
     path('deletestudentsforshowall/<str:username>', views.DeleteStudentForShowall,name='deletestudentsforshowall'),
     path('getdeletepage/',views.GetDeletePage, name='getdeletepage'),
     path('delete/', views.Delete, name='delete'),
+
+    path('logout/', views.Logout, name='logout'),
+
+    path('loginstudent/',views.LoginStudent, name='loginstudent'),
+    path('', views.GetLoginPage, name='getloginpage'),
+
+    path('signin/', views.SignIn,name='signin'),
+    path('getsigninpage/', views.GetSigninPage, name='getsigninpage'),
 ]

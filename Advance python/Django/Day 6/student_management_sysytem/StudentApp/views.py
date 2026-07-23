@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import StudentIfo
+from .models import StudentIfo, SigninInfo
+from django.contrib.auth import logout
 
 # Create your views here.
 
@@ -97,3 +98,38 @@ def Delete(request):
     else:
         return render(request, 'delete.html',{'mgs':'Invalid Username'})
     
+def GetLoginPage(request):
+    return render(request, 'login.html')
+
+def LoginStudent(request):
+    username = request.GET['username']
+    password = request.GET['password']
+
+    student_db = SigninInfo.objects.get(username = username)
+
+
+    if student_db.username == username.strip() and student_db.password == password:
+        request.session['username'] = username
+        return redirect('showallstudents')
+    else:
+        return render(request,'login.html',{'msg':'Invalid Username and Password..'})
+    
+def Logout(request):
+    logout(request)
+    return render(request, 'login.html',{'msg':'Logout successfully..'})
+
+def GetSigninPage(request):
+    return render(request, 'signin.html')
+
+def SignIn(request):
+    username = request.GET['username']
+    password = request.GET['password']
+
+    if username:
+        SigninInfo.objects.create(
+            username = username,
+            password = password
+        )
+        return render(request,"login.html")
+    else:
+        return render(request, 'signin.html',{'msg':'username already exist..'})

@@ -1,0 +1,62 @@
+body{
+    background:#f4f7fb;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+}
+
+.card-header{
+    background:#198754;
+    color:white;
+    padding:18px;
+}
+
+.card-header h2{
+    margin:0;
+    font-weight:600;
+}
+
+.table{
+    margin-bottom:0;
+}
+
+.table thead{
+    background:#198754;
+    color:white;
+}
+
+.table th{
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+.question{
+    min-width:250px;
+    text-align:left;
+    font-weight:500;
+}
+
+.table tbody tr:hover{
+    background:#eef9f0;
+    transition:.3s;
+}
+
+.badge{
+    font-size:14px;
+    padding:8px 12px;
+}
+
+.btn{
+    margin:2px;
+}
+
+.alert{
+    font-size:18px;
+}

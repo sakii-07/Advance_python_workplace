@@ -1,0 +1,132 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI',sans-serif;
+
+    background:linear-gradient(rgba(0,0,0,.45),
+    rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1500&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.login-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.logo{
+
+    width:80px;
+    height:80px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#198754;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+.form-control{
+
+    height:48px;
+
+    border-radius:10px;
+
+}
+
+.form-control:focus{
+
+    border-color:#198754;
+
+    box-shadow:0 0 8px rgba(25,135,84,.35);
+
+}
+
+.login-btn{
+
+    background:#198754;
+
+    color:white;
+
+    font-weight:600;
+
+    height:48px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    background:#146c43;
+
+    color:white;
+
+}
+
+.forgot{
+
+    text-decoration:none;
+
+    color:#198754;
+
+    font-weight:500;
+
+}
+
+.forgot:hover{
+
+    text-decoration:underline;
+
+}
+
+.register-link{
+
+    text-decoration:none;
+
+    color:#198754;
+
+    font-weight:bold;
+
+}
+
+.register-link:hover{
+
+    text-decoration:underline;
+
+}
+
+@media(max-width:768px){
+
+.login-card{
+
+padding:30px;
+
+}
+
+}

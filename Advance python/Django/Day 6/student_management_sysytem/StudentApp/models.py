@@ -13,7 +13,15 @@ class StudentIfo(models.Model):
     semester = models.CharField(max_length=32)
     username = models.CharField(max_length=32, unique=True, primary_key=True)
     password = models.CharField(max_length=32)
-    created_at = models.DateField(auto_now_add=True, null=True)
+    created_at = models.DateField(auto_now_add=True)
 
     class Meta:
         db_table = 'studentinfo'
+
+class SigninInfo(models.Model):
+    username = models.CharField(primary_key=True, max_length=32)
+    password = models.CharField(max_length=32)
+    created_at = models.DateField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'signin_info'

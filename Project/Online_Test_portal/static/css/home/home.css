@@ -1,0 +1,40 @@
+body{
+    background:#f5f7fa;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.dashboard-card{
+    border:none;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.card-body{
+    padding:35px 20px;
+}
+
+.card h4{
+    font-weight:600;
+}
+
+.card p{
+    min-height:60px;
+}
+
+.btn{
+    border-radius:8px;
+    font-weight:500;
+}
+
+.navbar-brand{
+    font-size:24px;
+}
+
+.display-3{
+    font-size:60px;
+}

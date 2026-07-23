@@ -1,0 +1,48 @@
+body{
+    background:#f5f7fa;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.card-header{
+    background:#198754;
+    color:white;
+    padding:18px 20px;
+}
+
+.card-header h3{
+    margin:0;
+    font-weight:600;
+}
+
+.table{
+    margin-bottom:0;
+}
+
+.table thead{
+    background:#198754;
+    color:white;
+}
+
+.table th,
+.table td{
+    vertical-align:middle;
+}
+
+.table tbody tr:hover{
+    background:#eef9f1;
+}
+
+.btn{
+    border-radius:6px;
+    margin:2px;
+}
+
+.alert{
+    border-radius:10px;
+}

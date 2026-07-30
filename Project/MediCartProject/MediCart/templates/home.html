@@ -1,0 +1,297 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediCart | Home</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h1>Your Trusted Online Pharmacy</h1>
+
+<p>
+Get genuine medicines delivered to your doorstep.
+Fast delivery, affordable prices, and trusted healthcare.
+</p>
+
+<a href="#" class="btn btn-success btn-lg mt-3">
+Shop Now
+</a>
+
+</div>
+
+<div class="col-lg-6 text-center">
+
+<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=700"
+class="img-fluid rounded shadow">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Medicines -->
+
+<section class="container py-5">
+
+<h2 class="text-center mb-5">
+Featured Medicines
+</h2>
+
+<div class="row">
+
+<div class="col-md-3">
+
+<div class="card medicine-card">
+
+<img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500"
+class="card-img-top">
+
+<div class="card-body">
+
+<h5>Paracetamol</h5>
+
+<p>Effective relief from fever and mild pain.</p>
+
+<button class="btn btn-success w-100">
+₹40
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card medicine-card">
+
+<img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500"
+class="card-img-top">
+
+<div class="card-body">
+
+<h5>Vitamin C</h5>
+
+<p>Boosts immunity and supports overall health.</p>
+
+<button class="btn btn-success w-100">
+₹199
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card medicine-card">
+
+<img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=500"
+class="card-img-top">
+
+<div class="card-body">
+
+<h5>Cough Syrup</h5>
+
+<p>Provides quick relief from cough and cold.</p>
+
+<button class="btn btn-success w-100">
+₹120
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card medicine-card">
+
+<img src="https://images.unsplash.com/photo-1573883430697-4c3474a4f6d3?w=500"
+class="card-img-top">
+
+<div class="card-body">
+
+<h5>Hand Sanitizer</h5>
+
+<p>Kills 99.9% germs and keeps hands clean.</p>
+
+<button class="btn btn-success w-100">
+₹99
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Why Choose -->
+
+<section class="why-us">
+
+<div class="container">
+
+<h2 class="text-center mb-5">
+Why Choose MediCart?
+</h2>
+
+<div class="row text-center">
+
+<div class="col-md-3">
+
+<i class="fa-solid fa-truck-fast icon"></i>
+
+<h5>Fast Delivery</h5>
+
+<p>Delivery within 24 hours.</p>
+
+</div>
+
+<div class="col-md-3">
+
+<i class="fa-solid fa-capsules icon"></i>
+
+<h5>Genuine Medicines</h5>
+
+<p>100% Authentic Products.</p>
+
+</div>
+
+<div class="col-md-3">
+
+<i class="fa-solid fa-user-doctor icon"></i>
+
+<h5>Expert Support</h5>
+
+<p>Professional healthcare assistance.</p>
+
+</div>
+
+<div class="col-md-3">
+
+<i class="fa-solid fa-shield-heart icon"></i>
+
+<h5>Secure Payment</h5>
+
+<p>Safe and encrypted transactions.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Services -->
+
+<section class="container py-5">
+
+<h2 class="text-center mb-5">
+Healthcare Services
+</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="service-box">
+
+<i class="fa-solid fa-prescription-bottle-medical"></i>
+
+<h4>Online Prescription</h4>
+
+<p>Upload prescriptions and order medicines easily.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="service-box">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h4>Health Checkups</h4>
+
+<p>Book lab tests and regular health screenings.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="service-box">
+
+<i class="fa-solid fa-headset"></i>
+
+<h4>24/7 Support</h4>
+
+<p>Our support team is available anytime.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+<div class="container">
+
+<p>
+© 2026 MediCart | All Rights Reserved
+</p>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+{%endblock%}

@@ -1,0 +1,144 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+    min-height:100vh;
+
+}
+
+.trainer-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.card-header{
+
+    background:linear-gradient(135deg,#f97316,#fb923c);
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+
+}
+
+.trainer-icon{
+
+    font-size:80px;
+
+    margin-bottom:15px;
+
+}
+
+.card-header h2{
+
+    font-weight:700;
+
+}
+
+.card-header p{
+
+    margin-bottom:0;
+
+    opacity:.9;
+
+}
+
+.card-body{
+
+    background:white;
+
+    padding:35px;
+
+}
+
+.form-label{
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+.form-control{
+
+    height:50px;
+
+    border-radius:10px;
+
+    border:1px solid #d1d5db;
+
+}
+
+.form-control:focus{
+
+    border-color:#f97316;
+
+    box-shadow:0 0 8px rgba(249,115,22,.3);
+
+}
+
+.btn{
+
+    padding:12px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+}
+
+.btn-warning{
+
+    background:#f97316;
+
+    border:none;
+
+    color:white;
+
+}
+
+.btn-warning:hover{
+
+    background:#ea580c;
+
+    color:white;
+
+}
+
+.btn-dark:hover{
+
+    background:#111827;
+
+}
+
+@media(max-width:768px){
+
+    .card-body{
+
+        padding:25px;
+
+    }
+
+    .trainer-icon{
+
+        font-size:65px;
+
+    }
+
+}

@@ -1,0 +1,34 @@
+body{
+    background:#f5f7fa;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.card{
+    border-radius:15px;
+}
+
+.card-header{
+    background:#198754;
+    color:white;
+    padding:25px;
+}
+
+.card-header h2{
+    font-weight:bold;
+}
+
+.card-header p{
+    margin-top:8px;
+    margin-bottom:0;
+}
+
+.form-control{
+    height:48px;
+    border-radius:10px;
+}
+
+.btn{
+    border-radius:10px;
+    font-size:18px;
+    padding:10px;
+}

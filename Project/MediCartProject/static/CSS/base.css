@@ -1,0 +1,190 @@
+body{
+
+    font-family:Segoe UI,sans-serif;
+
+    background:#F0FDFA;   /* soft medical green background */
+
+}
+
+
+
+/* Navbar */
+
+.custom-navbar{
+
+    background:#FFFFFF;
+
+    padding:15px 0;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+
+}
+
+
+
+/* Logo */
+
+.navbar-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+.logo-box{
+
+    width:48px;
+    height:48px;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #0F766E,
+        #14B8A6
+    );
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+}
+
+
+
+.brand-name{
+
+    font-size:28px;
+
+    color:#0F766E;
+
+    font-weight:700;
+
+}
+
+
+
+.brand-name span{
+
+    color:#14B8A6;
+
+}
+
+
+
+/* Navbar Links */
+
+.navbar-nav .nav-link{
+
+    color:#374151;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    margin:0 10px;
+
+    transition:.3s;
+
+}
+
+
+
+.navbar-nav .nav-link:hover{
+
+    color:#0F766E;
+
+}
+
+
+
+.navbar-nav .active{
+
+    color:#0F766E !important;
+
+}
+
+
+
+/* Icons */
+
+.icon-btn{
+
+    width:42px;
+
+    height:42px;
+
+    background:#E6FFFA;
+
+    color:#0F766E;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+
+.icon-btn:hover{
+
+    background:#0F766E;
+
+    color:white;
+
+}
+
+
+
+/* Login Button */
+
+.btn-login{
+
+    background:linear-gradient(
+        135deg,
+        #0F766E,
+        #14B8A6
+    );
+
+    color:white;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    border:none;
+
+}
+
+
+
+.btn-login:hover{
+
+    background:#115E59;
+
+    color:white;
+
+    transform:translateY(-2px);
+
+}

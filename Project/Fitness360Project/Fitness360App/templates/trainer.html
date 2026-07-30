@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Trainer | FitFusion</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/trainer.css' %}">
+</head>
+<body>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6 col-md-8">
+
+            <div class="card shadow-lg">
+
+                <div class="card-header text-center">
+                    <h2> Add Trainer</h2>
+                    <p>Fitness360 Smart Gym Management System</p>
+                </div>
+
+                <div class="card-body">
+
+                    <form action="{% url 'addtrainer'%}" method="post">
+
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">Trainer Name</label>
+                            <input type="text"
+                                   name="trainer_name"
+                                   class="form-control"
+                                   placeholder="Enter Trainer Name"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Specialization</label>
+
+                            <select name="specialization"
+                                    class="form-select">
+
+                                <option selected disabled>
+                                    Select Specialization
+                                </option>
+
+                                <option value="Strength Training">Strength Training</option>
+                                <option value="Cardio">Cardio</option>
+                                <option value="Yoga">Yoga</option>
+                                <option value="Zumba">Zumba</option>
+                                <option value="CrossFit">CrossFit</option>
+                                <option value="Weight Loss">Weight Loss</option>
+                                <option value="Body Building<">Body Building</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Experience (Years)</label>
+                            <input type="number"
+                                   name="experience"
+                                   class="form-control"
+                                   placeholder="Enter Experience"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Mobile Number</label>
+                            <input type="number"
+                                   name="mobile"
+                                   class="form-control"
+                                   placeholder="Enter Mobile Number"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email"
+                                   name="email"
+                                   class="form-control"
+                                   placeholder="Enter Email"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Salary</label>
+                            <input type="number"
+                                   name="salary"
+                                   class="form-control"
+                                   placeholder="Enter Salary"
+                                   required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Joining Date</label>
+                            <input type="date"
+                                   name="joining_date"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="d-grid">
+
+                            <button class="btn btn-success btn-lg">
+
+                                Add Trainer
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

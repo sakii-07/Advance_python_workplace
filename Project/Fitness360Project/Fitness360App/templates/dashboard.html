@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Fitness360</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            <i class="fa-solid fa-dumbbell"></i> Fitness360
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"
+                    href="#"
+                    data-bs-toggle="dropdown">
+
+                        <i class="fa-solid fa-users"></i>
+                        Members
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li><a class="dropdown-item" href="{% url 'getregisterpage' %}">Register</a></li>
+                        <li><a class="dropdown-item" href="{% url 'showallmembers'%}">View Members</a></li>
+                        <li><a class="dropdown-item" href="{% url 'getmyprofilepage'%}">My Profile</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"
+                    href="#"
+                    data-bs-toggle="dropdown">
+
+                        <i class="fa-solid fa-dumbbell"></i>
+                        Gym
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li><a class="dropdown-item" href="{% url 'showalltrainers'%}">Trainer</a></li>
+                        <li><a class="dropdown-item" href="{% url 'showallequipmnts'%}">Equipment</a></li>
+                        <li><a class="dropdown-item" href="{% url 'showallattedace' %}">Attendance</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"
+                    href="#"
+                    data-bs-toggle="dropdown">
+
+                        <i class="fa-solid fa-wallet"></i>
+                        Payment
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li><a class="dropdown-item" href="{% url 'showallpayments' %}">Payments</a></li>
+                        <li><a class="dropdown-item" href="{% url 'showallfeedbacks' %}">Feedback</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li class="nav-item ms-lg-3">
+
+                    <a href="{% url 'logout'%}" class="btn btn-warning rounded-pill px-4">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>Welcome to Fitness360</h1>
+
+        <p>
+            Smart Gym Management System
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Dashboard Cards -->
+
+<div class="container my-5">
+
+    <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h4>Total Members</h4>
+
+                <h2>{{ total_users }}</h2>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                <h4>Trainers</h4>
+
+                <h2>{{ total_trainers }}</h2>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <h4>Equipment</h4>
+
+                <h2>{{ total_equipment }}</h2>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <h4>Attendance</h4>
+
+                <h2>{{ total_attendance }}</h2>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <h4>Payments</h4>
+
+                <h2>{{ total_payments }}</h2>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <h4>Feedback</h4>
+
+                <h2>{{ total_feedback }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

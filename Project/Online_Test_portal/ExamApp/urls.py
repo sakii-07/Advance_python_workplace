@@ -27,6 +27,22 @@ urlpatterns = [
     path('getupdateprofilepage/', views.GetUpdateProfilePage, name='getupdateprofilepage'),
     path('updateprofile/', views.UpdateProfile, name='updateprofile'),
 
+    path('updateuser/', views.UpdateUser, name='updateuser'),
+    path('getupdateuserpage/<str:username>/', views.GetUpdateUserPage, name='getupdateuserpage'),
+
     path('getusermodulepage/', views.GetUserModulePage, name='getusermodulepage'),
-    path('getshowallpage/', views.GetShowAllUserPage, name='getshowallpage')
+    path('getshowallpage/', views.GetShowAllUserPage, name='getshowallpage'),
+
+    path('getinstructionpage/', views.GetInstructionPage, name='getinstructionpage'),
+    path('starttest/', views.StartTest, name='starttest'),
+    path('getsubjectpage/', views.GetSubjestPage, name='getsubjectpage'),
+
+    path('nextquestion/', views.NextQuestion, name='nextquestion'),
+    path('previousquestion/', views.PreviousQuestion, name='previousquestion'),
+    path('endtest/', views.EndTest, name='endtest'),
+    path('showallresult/', views.ShowAllresult, name='showallresult'),
+    path('getdeleteuserpage/', views.GetDeleteUserPage, name='getdeleteuserpage'),
+
+    path('deleteuser/<str:username>/', views.Deleteuser, name='deleteuser')
+
 ]

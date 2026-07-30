@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Trainer | Fitness360</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/update_trainer.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-7">
+
+            <div class="card trainer-card shadow">
+
+                <div class="card-header text-center">
+
+                    <i class="fa-solid fa-user-pen trainer-icon"></i>
+
+                    <h2>Update Trainer</h2>
+
+                    <p>Fitness360 Smart Gym Management System</p>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form action="#" method="post">
+
+                        {% csrf_token %}
+
+                        <input type="hidden"
+                               name="trainer_id"
+                               value="{{ trainer.trainer_id }}">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Trainer Name</label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   name="trainer_name"
+                                   value="{{ trainer.trainer_name }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Specialization</label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   name="specialization"
+                                   value="{{ trainer.specialization }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Experience (Years)</label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   name="experience"
+                                   value="{{ trainer.experience }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Mobile</label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   name="mobile"
+                                   value="{{ trainer.mobile }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Email</label>
+
+                            <input type="email"
+                                   class="form-control"
+                                   name="email"
+                                   value="{{ trainer.email }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Salary</label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   name="salary"
+                                   value="{{ trainer.salary }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label">Joining Date</label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   name="joining_date"
+                                   value="{{ trainer.joining_date|date:'Y-m-d' }}"
+                                   required>
+
+                        </div>
+
+                        <div class="d-grid gap-2">
+
+                            <button class="btn btn-warning">
+
+                                <i class="fa-solid fa-floppy-disk"></i>
+
+                                Update Trainer
+
+                            </button>
+
+                            <a href="#" class="btn btn-dark">
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Back
+
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

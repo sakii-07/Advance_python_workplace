@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | Fitness360</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/attendance.css' %}">
+</head>
+<body>
+
+    
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-lg">
+
+                <div class="card-header text-center">
+
+                    <h2> Member Attendance</h2>
+
+                    <p>Fitness360 Smart Gym Management System</p>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form action="{% url 'addattendance' %}" method="post">
+
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Select Member</label>
+
+                            <select class="form-select" name="username" required>
+
+                                <option selected disabled>Select Member</option>
+
+                                {% for user in users %}
+
+                                <option value="{{ user.username }}">
+                                    {{ user.username }}
+                                </option>
+
+                                {% endfor %}
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Attendance Date</label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   name="attendance_date"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Check In Time</label>
+
+                            <input type="time"
+                                   class="form-control"
+                                   name="check_in"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Check Out Time</label>
+
+                            <input type="time"
+                                   class="form-control"
+                                   name="check_out">
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label">Attendance Status</label>
+
+                            <select class="form-select"
+                                    name="status"
+                                    required>
+
+                                <option selected disabled>Select Status</option>
+
+                                <option value="Present">Present</option>
+
+                                <option value="Absent">Absent</option>
+
+                                <option value="Half Day">Half Day</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="d-grid">
+
+                            <button class="btn btn-success btn-lg">
+
+                                Save Attendance
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

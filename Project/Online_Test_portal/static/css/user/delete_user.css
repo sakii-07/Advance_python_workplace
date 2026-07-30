@@ -1,0 +1,41 @@
+body{
+    background:#f4f7fc;
+}
+
+.delete-card{
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.card-header{
+    border:none;
+}
+
+.delete-icon{
+    font-size:80px;
+    color:#dc3545;
+}
+
+.card-body h4{
+    font-weight:700;
+}
+
+.card-body p{
+    font-size:17px;
+}
+
+.btn{
+    border-radius:10px;
+    min-width:150px;
+    font-weight:600;
+}
+
+.btn-danger:hover{
+    transform:scale(1.05);
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+    transform:scale(1.05);
+    transition:.3s;
+}

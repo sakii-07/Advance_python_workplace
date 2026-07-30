@@ -1,0 +1,108 @@
+{% extends 'Test/test_navbar.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Test | Online Exam Portal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/test/instruction.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-9">
+
+            <div class="card shadow-lg border-0 main-card">
+
+                <div class="card-header text-center">
+
+                    <h2>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Online Examination Portal
+                    </h2>
+
+                    <p class="mb-0">
+                        Read the instructions carefully before starting the test.
+                    </p>
+
+                </div>
+
+                <div class="card-body">
+
+                    <!-- Instructions -->
+
+                    <div class="instruction-box mt-4">
+
+                        <h4>
+                            <i class="fa-solid fa-circle-info"></i>
+                            Exam Instructions
+                        </h4>
+
+                        <ul class="mt-3">
+
+                            <li>Read every question carefully.</li>
+
+                            <li>Each question carries equal marks.</li>
+
+                            <li>No negative marking.</li>
+
+                            <li>Do not refresh or close the browser.</li>
+
+                            <li>Timer will start immediately after clicking Start Test.</li>
+
+                            <li>Once submitted, answers cannot be changed.</li>
+
+                            <li>Click Submit Test before the timer ends.</li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Warning -->
+
+                    <div class="alert alert-warning mt-4">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        Make sure you have a stable internet connection before
+                        starting the examination.
+
+                    </div>
+
+                    <!-- Start Button -->
+
+                    <div class="text-center mt-5">
+
+                        <a href="{% url 'getsubjectpage' %}" class="btn btn-lg start-btn">
+
+                            <i class="fa-solid fa-play"></i>
+
+                            Start Test
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

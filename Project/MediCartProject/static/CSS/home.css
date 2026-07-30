@@ -1,0 +1,100 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f7faf9;
+}
+
+.hero{
+    padding:80px 0;
+    background:linear-gradient(to right,#e9fff2,#ffffff);
+}
+
+.hero h1{
+    font-size:50px;
+    font-weight:bold;
+    color:#198754;
+}
+
+.hero p{
+    font-size:18px;
+    color:#555;
+}
+
+.hero img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+}
+
+.medicine-card{
+    transition:.4s;
+    border:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    margin-bottom:25px;
+}
+
+.medicine-card:hover{
+    transform:translateY(-8px);
+}
+
+.medicine-card img{
+    height:220px;
+    object-fit:cover;
+}
+
+.why-us{
+    background:#198754;
+    color:white;
+    padding:70px 0;
+}
+
+.icon{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.service-box{
+    text-align:center;
+    padding:30px;
+    border-radius:10px;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+}
+
+.service-box i{
+    color:#198754;
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+footer{
+    background:#146c43;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:40px;
+}
+
+.navbar-brand{
+    font-size:28px;
+}
+
+.btn-success{
+    border-radius:30px;
+}
+
+.card{
+    border-radius:15px;
+}
+
+input.form-control{
+    border-radius:30px 0 0 30px;
+}
+
+.input-group button{
+    border-radius:0 30px 30px 0;
+}

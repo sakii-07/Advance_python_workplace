@@ -124,3 +124,80 @@ footer h3{
 }
 
 }
+
+/* ================= Product Section ================= */
+
+.product-card{
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+
+.product-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+.product-card .card-body{
+    padding: 25px;
+    text-align: center;
+}
+
+.product-card h4{
+    color: #198754;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.product-card p{
+    color: #6c757d;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 70px;
+}
+
+.product-card h5{
+    font-size: 24px;
+    font-weight: bold;
+    color: #198754;
+    margin: 20px 0;
+}
+
+.product-card .btn{
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.product-card .btn:hover{
+    transform: scale(1.05);
+    background: #146c43;
+}
+
+/* Product Grid */
+
+.row.g-4{
+    margin-top: 20px;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .product-card{
+        margin-bottom: 20px;
+    }
+
+    .product-card h4{
+        font-size: 22px;
+    }
+
+    .product-card h5{
+        font-size: 20px;
+    }
+
+}

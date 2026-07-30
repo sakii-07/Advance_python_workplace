@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Equipment | Fitness360</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/update_equipment.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card equipment-card shadow-lg">
+
+                <div class="card-header text-center">
+
+                    <i class="fa-solid fa-dumbbell equipment-icon"></i>
+
+                    <h2>Update Equipment</h2>
+
+                    <p>Fitness360 Smart Gym Management System</p>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form action="{% url 'updatequipment' %}" method="post">
+
+                        {% csrf_token %}
+
+                        <input type="hidden"
+                               name="equipment_id"
+                               value="{{ equipment.equipment_id }}">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Equipment Name
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   name="equipment_name"
+                                   value="{{ equipment.equipment_name }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Brand
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   name="brand"
+                                   value="{{ equipment.brand }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Quantity
+                            </label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   name="quantity"
+                                   value="{{ equipment.quantity }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Purchase Date
+                            </label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   name="purchase_date"
+                                   value="{{ equipment.purchase_date|date:'Y-m-d' }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Status
+                            </label>
+
+                            <select class="form-select"
+                                    name="status"
+                                    required>
+
+                                <option value="Available"
+                                {% if equipment.status == "Available" %}selected{% endif %}>
+                                    Available
+                                </option>
+
+                                <option value="Maintenance"
+                                {% if equipment.status == "Maintenance" %}selected{% endif %}>
+                                    Maintenance
+                                </option>
+
+                                <option value="Out of Service"
+                                {% if equipment.status == "Out of Service" %}selected{% endif %}>
+                                    Out of Service
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="d-grid gap-2">
+
+                            <button class="btn btn-warning">
+
+                                <i class="fa-solid fa-floppy-disk"></i>
+
+                                Update Equipment
+
+                            </button>
+
+                            <a href="{% url 'showeallquipments' %}"
+                               class="btn btn-dark">
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Back
+
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

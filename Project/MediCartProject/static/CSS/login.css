@@ -1,0 +1,196 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+}
+
+/* Left Section */
+
+.left-section{
+    background:linear-gradient(135deg,#0d6efd,#198754);
+    color:#fff;
+    text-align:center;
+    padding:40px;
+}
+
+.logo-circle{
+    width:180px;
+    height:180px;
+    background:rgba(255,255,255,.15);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.logo-inner{
+    position:relative;
+}
+
+.logo-pill{
+    font-size:80px;
+    color:#fff;
+}
+
+.logo-plus{
+    position:absolute;
+    top:-12px;
+    right:-10px;
+    font-size:28px;
+    color:#ffd43b;
+}
+
+.logo-heart{
+    position:absolute;
+    bottom:-8px;
+    left:-8px;
+    font-size:30px;
+    color:#ff4d6d;
+}
+
+.brand{
+    font-size:50px;
+    font-weight:700;
+    margin-top:30px;
+}
+
+.brand span{
+    color:#ffd43b;
+}
+
+.tagline{
+    margin-top:15px;
+    letter-spacing:2px;
+}
+
+.subtitle{
+    font-size:18px;
+    margin-top:10px;
+    opacity:.9;
+}
+
+/* Login Card */
+
+.signup-card{
+    width:100%;
+    max-width:460px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.icon-circle{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#198754;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-bottom:20px;
+}
+
+.icon-circle i{
+    font-size:42px;
+}
+
+.signup-card h2{
+    font-weight:700;
+    color:#198754;
+}
+
+.signup-card p{
+    color:#6c757d;
+}
+
+/* Form */
+
+label{
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.input-group-text{
+    background:#198754;
+    color:#fff;
+    border:none;
+}
+
+.form-control{
+    border-left:none;
+    height:50px;
+}
+
+.form-control:focus{
+    box-shadow:none;
+    border-color:#198754;
+}
+
+.input-group:focus-within .input-group-text{
+    background:#146c43;
+}
+
+/* Button */
+
+.signup-btn{
+    background:#198754;
+    color:#fff;
+    border:none;
+    padding:12px;
+    font-size:18px;
+    font-weight:600;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.signup-btn:hover{
+    background:#146c43;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+a{
+    color:#198754;
+    text-decoration:none;
+    font-weight:500;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.left-section{
+    min-height:320px;
+}
+
+.logo-circle{
+    width:140px;
+    height:140px;
+}
+
+.logo-pill{
+    font-size:60px;
+}
+
+.brand{
+    font-size:38px;
+}
+
+.signup-card{
+    margin:40px 15px;
+}
+
+}

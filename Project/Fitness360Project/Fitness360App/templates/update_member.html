@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Member | Fitness360</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/update_member.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card member-card shadow-lg">
+
+                <div class="card-header text-center">
+
+                    <i class="fa-solid fa-user-pen member-icon"></i>
+
+                    <h2>Update Member</h2>
+
+                    <p>Fitness360 Smart Gym Management System</p>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form action="{% url 'updatemember' %}" method="post">
+
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Username</label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   name="username"
+                                   value="{{ member.username }}"
+                                   readonly>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Email</label>
+
+                            <input type="email"
+                                   class="form-control"
+                                   name="email"
+                                   value="{{ member.email }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Password</label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   name="password"
+                                   value="{{ member.password }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label">Mobile</label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   name="mobile"
+                                   value="{{ member.mobile }}"
+                                   required>
+
+                        </div>
+
+                        <div class="d-grid gap-2">
+
+                            <button class="btn btn-warning">
+
+                                <i class="fa-solid fa-floppy-disk"></i>
+
+                                Update Member
+
+                            </button>
+
+                            <a href="{% url 'showallmembers' %}" class="btn btn-dark">
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Back
+
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

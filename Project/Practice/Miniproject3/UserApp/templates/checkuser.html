@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check User</title>
+    <style>
+        .box{
+            text-align: center;
+            border: 2px solid black;
+            padding: 20px;
+            font-size: 25px;
+            width: 30%;
+            margin: auto;
+        }
+        input{
+            width: 300px;
+            font-size: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h3>Check User</h3>
+        <form action="{% url 'checkuser'%}">
+            <label for="">User ID</label><br>
+            <input type="text" placeholder="Enter User ID" name="uid"> <br>
+            <input type="submit">
+        </form>
+
+        <h6>{{msg}} {{user.salary}}</h6>
+        {%if user%}
+        <h6>username : {{user.uname}}</h6>
+        {%endif%}
+    </div>
+    
+</body>
+</html>

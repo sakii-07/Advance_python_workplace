@@ -1,0 +1,203 @@
+/* ================= Banner ================= */
+
+.health-banner{
+
+    background:linear-gradient(rgba(13,110,253,.75),rgba(25,135,84,.75)),
+    url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:#fff;
+
+    padding:120px 0;
+}
+
+.health-banner h1{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+.health-banner p{
+
+    font-size:20px;
+}
+
+/* ================= Services ================= */
+
+.services-section{
+
+    background:#f8f9fa;
+}
+
+.health-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    padding:35px 25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+    height:100%;
+}
+
+.health-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+.health-card i{
+
+    font-size:60px;
+
+    color:#198754;
+
+    margin-bottom:20px;
+}
+
+.health-card h4{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+.health-card p{
+
+    color:#6c757d;
+
+    min-height:70px;
+}
+
+.health-card .btn{
+
+    border-radius:30px;
+
+    padding:10px 25px;
+}
+
+/* ================= Tips ================= */
+
+.tips-section{
+
+    background:#ffffff;
+}
+
+.tip-card{
+
+    background:#fff;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.tip-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.tip-icon{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+}
+
+.tip-card h4{
+
+    color:#198754;
+
+    margin-bottom:15px;
+}
+
+/* ================= Emergency ================= */
+
+.emergency-section{
+
+    background:#198754;
+
+    padding:80px 0;
+}
+
+.emergency-box{
+
+    color:#fff;
+
+    text-align:center;
+}
+
+.emergency-box h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+.emergency-box p{
+
+    font-size:18px;
+
+    margin-bottom:30px;
+}
+
+.emergency-box .btn{
+
+    border-radius:30px;
+
+    padding:12px 35px;
+
+    font-weight:600;
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:768px){
+
+.health-banner{
+
+    padding:80px 0;
+}
+
+.health-banner h1{
+
+    font-size:36px;
+}
+
+.health-banner p{
+
+    font-size:17px;
+}
+
+.health-card{
+
+    padding:25px;
+}
+
+.emergency-box h2{
+
+    font-size:30px;
+}
+
+}

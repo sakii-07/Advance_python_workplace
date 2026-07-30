@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#edf2fb,#d7e3fc,#ccdbfd);
+    min-height:100vh;
+}
+
+.member-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.card-header{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+    padding:30px;
+}
+
+.member-icon{
+    font-size:70px;
+    margin-bottom:10px;
+}
+
+.card-header h2{
+    font-weight:700;
+}
+
+.card-header p{
+    margin-bottom:0;
+    opacity:.9;
+}
+
+.card-body{
+    background:white;
+    padding:35px;
+}
+
+.form-label{
+    font-weight:600;
+    color:#374151;
+}
+
+.form-control{
+    height:50px;
+    border-radius:10px;
+    border:1px solid #d1d5db;
+}
+
+.form-control:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 8px rgba(37,99,235,.3);
+}
+
+.btn{
+    border-radius:30px;
+    padding:12px;
+    font-weight:600;
+}
+
+.btn-warning{
+    background:#f59e0b;
+    border:none;
+    color:white;
+}
+
+.btn-warning:hover{
+    background:#d97706;
+    color:white;
+}
+
+.btn-dark:hover{
+    background:#111827;
+}
+
+@media(max-width:768px){
+
+.card-body{
+    padding:25px;
+}
+
+.member-icon{
+    font-size:55px;
+}
+
+}

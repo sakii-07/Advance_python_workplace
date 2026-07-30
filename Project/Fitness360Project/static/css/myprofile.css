@@ -1,0 +1,240 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+/* Profile Card */
+
+.profile-card{
+
+    width:100%;
+
+    max-width:700px;
+
+    border:none;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    transition:.4s;
+
+}
+
+.profile-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* Header */
+
+.card-header{
+
+    background:linear-gradient(135deg,#f97316,#fb923c);
+
+    text-align:center;
+
+    padding:35px;
+
+    color:white;
+
+    border:none;
+
+}
+
+/* Profile Icon */
+
+.profile-icon{
+
+    font-size:95px;
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+.card-header h2{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:5px;
+
+}
+
+.card-header p{
+
+    opacity:.9;
+
+    margin:0;
+
+}
+
+/* Card Body */
+
+.card-body{
+
+    background:white;
+
+    padding:35px;
+
+}
+
+/* Table */
+
+.table{
+
+    margin-bottom:25px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+.table th{
+
+    background:#f8fafc;
+
+    color:#f97316;
+
+    font-weight:600;
+
+    width:35%;
+
+    padding:15px;
+
+}
+
+.table td{
+
+    background:white;
+
+    color:#374151;
+
+    padding:15px;
+
+}
+
+.table tr{
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.table tr:hover td{
+
+    background:#fff7ed;
+
+}
+
+/* Buttons */
+
+.btn{
+
+    border-radius:50px;
+
+    padding:12px 28px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-warning{
+
+    background:#f97316;
+
+    border:none;
+
+    color:white;
+
+}
+
+.btn-warning:hover{
+
+    background:#ea580c;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-dark{
+
+    background:#1e293b;
+
+    border:none;
+
+}
+
+.btn-dark:hover{
+
+    background:#0f172a;
+
+    transform:translateY(-3px);
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    .card-header{
+
+        padding:25px;
+
+    }
+
+    .profile-icon{
+
+        font-size:70px;
+
+    }
+
+    .card-header h2{
+
+        font-size:26px;
+
+    }
+
+    .card-body{
+
+        padding:20px;
+
+    }
+
+}

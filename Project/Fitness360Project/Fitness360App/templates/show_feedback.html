@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Feedback | Fitness360</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/show_feedback.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container py-5">
+
+    <div class="feedback-card shadow">
+
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+
+            <h1 class="page-title">
+                <i class="fa-solid fa-star text-warning"></i>
+                Feedback Records
+            </h1>
+
+            <a href="{% url 'getaddfeedbackpage' %}" class="btn btn-success px-4">
+                <i class="fa-solid fa-plus"></i>
+                Add Feedback
+            </a>
+
+        </div>
+
+        <div class="mb-4">
+
+            <input type="text"
+                   class="form-control search-box"
+                   placeholder="Search by Username..."
+                   id="searchInput">
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle text-center" id="feedbackTable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Rating</th>
+                        <th>Review</th>
+                        <th>Date</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for feedback in Feedbacks %}
+
+                    <tr>
+
+                        <td>{{ feedback.feedback_id }}</td>
+
+                        <td>{{ feedback.username.username }}</td>
+
+                        <td>
+
+                            <span class="badge bg-warning text-dark fs-6">
+                                ⭐ {{ feedback.rating }}/5
+                            </span>
+
+                        </td>
+
+                        <td>{{ feedback.review }}</td>
+
+                        <td>{{ feedback.feedback_date }}</td>
+
+                        <td>
+
+                            <a href="{% url 'getupdatefeedbackpage' feedback.feedback_id %}"
+                               class="btn btn-warning btn-sm">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </a>
+
+                            <a href="{% url 'deletefeedback' feedback.feedback_id %}"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Delete this feedback?')">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% empty %}
+
+                    <tr>
+
+                        <td colspan="6" class="text-danger fw-bold">
+                            No Feedback Available
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const searchInput=document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",function(){
+
+let filter=this.value.toLowerCase();
+
+let rows=document.querySelectorAll("#feedbackTable tbody tr");
+
+rows.forEach(function(row){
+
+let username=row.cells[1].textContent.toLowerCase();
+
+row.style.display=username.includes(filter)?"":"none";
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

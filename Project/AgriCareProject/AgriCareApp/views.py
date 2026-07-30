@@ -37,7 +37,9 @@ def GetNavbar(request):
     return render(request, 'base.html')
 
 def GetHomePage(request):
-    return render(request, 'home.html')
+    product_db = Product.objects.all()
+
+    return render(request, 'home.html', {'product_db': product_db})
 
 def Logout(request):
     logout(request)
@@ -58,7 +60,7 @@ def AddProduct(request):
     price = request.GET['price']
     stock = request.GET['stock']
     description = request.GET['description']
-    image = request.FILES['image']
+    image = request.GET['image']
     manufacturing_date = request.GET['manufacturing_date']
     expiry_date = request.GET['expiry_date']
 
@@ -73,13 +75,13 @@ def AddProduct(request):
         manufacturing_date = manufacturing_date,
         expiry_date = expiry_date
     )
-    return render(request, 'show_products.html')
+    return redirect('getshowallproductpage')
 
 def UpdateProduct(request):
-   products_db =  Product.objects.filter()
+   product_name = request.GET['product_name']
+   products_db =  Product.objects.filter(product_name = product_name)
 
    products_db.update(
-       product_name = request.GET['product_name'],
         category = request.GET['category'],
         brand = request.GET['brand'],
         price = request.GET['price'],
@@ -139,3 +141,11 @@ def UpdateUserDetails(request):
     else:
         return render(request, 'update_userinfo.html',{'msg':'Invalid Username'})
 
+def GetCategoryPage(request):
+    return render(request,'categories.html')
+
+def GetAboutPage(request):
+    return render(request,'about.html')
+
+def GetContactPage(request):
+    return render(request,'contact.html')

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Customer</title>
+    <style>
+        .box{
+            width: 30%;
+            border: 2px solid black;
+            border-radius: 15px;
+            font-size: 25px;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+        }
+        input{
+            width: 300px;
+            margin: 10px;
+            padding: 5px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Check Customer</h2>
+        <form action="{% url 'checkcustomer'%}">
+            <label for="">Customer Id : </label><br>
+            <input type="text" placeholder="Enter Customer Id", name="cid"><br>
+            <input type="submit">
+        </form>
+        <h6>{{msg}} {{customer.salary}}</h6>
+    </div>
+    
+</body>
+</html>

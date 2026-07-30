@@ -28,4 +28,8 @@ urlpatterns = [
     path('updateuserdetails/', views.UpdateUserDetails, name='updateuserdetails'),
     path('getuserdetailspage/', views.GetUserDetailsPage, name='getuserdetailspage'),
 
+    path('getcategoryspage/', views.GetCategoryPage, name='getcategoryspage'),
+    path('getaboutpage/', views.GetAboutPage, name='getaboutpage'),
+    path('getcontactpage/', views.GetContactPage, name='getcontactpage'),
+
 ]

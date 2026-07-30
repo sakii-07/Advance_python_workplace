@@ -1,0 +1,83 @@
+body{
+    background:#f8faf7;
+    font-family:Arial, sans-serif;
+}
+
+/* Hero */
+
+.about-hero{
+    background:linear-gradient(rgba(25,135,84,.8),rgba(25,135,84,.8)),
+    url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80');
+    background-size:cover;
+    background-position:center;
+    color:#fff;
+    padding:120px 0;
+}
+
+.about-hero h1{
+    font-weight:700;
+}
+
+/* Mission */
+
+.mission-section{
+    background:#eef8f1;
+}
+
+.info-card{
+    background:#fff;
+    padding:35px 20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.info-card:hover{
+    transform:translateY(-8px);
+}
+
+.info-card i{
+    font-size:55px;
+    color:#198754;
+    margin-bottom:15px;
+}
+
+/* Features */
+
+.feature-box{
+    background:#fff;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.feature-box:hover{
+    background:#198754;
+    color:#fff;
+    transform:translateY(-8px);
+}
+
+.feature-box i{
+    font-size:45px;
+    color:#198754;
+    margin-bottom:15px;
+}
+
+.feature-box:hover i{
+    color:#fff;
+}
+
+/* Counter */
+
+.counter-section{
+    background:#198754;
+    color:#fff;
+    padding:70px 0;
+}
+
+.counter-section h2{
+    font-size:42px;
+    font-weight:bold;
+}

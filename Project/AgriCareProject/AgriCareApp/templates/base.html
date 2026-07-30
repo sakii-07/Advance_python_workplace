@@ -25,7 +25,7 @@
 
         <!-- Logo -->
         <a class="navbar-brand fw-bold" href="{% url 'gethomepage' %}">
-            🌱 AgriCare
+             AgriCare
         </a>
 
         <!-- Mobile Button -->
@@ -59,53 +59,22 @@
                 <li class="nav-item dropdown">
 
                     <a class="nav-link dropdown-toggle"
-                       href="#"
-                       role="button"
-                       data-bs-toggle="dropdown">
+                       href="{% url 'getcategoryspage'%}">
 
                         <i class="bi bi-grid"></i>
                         Categories
                     </a>
-
-                    <ul class="dropdown-menu">
-
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                🌿 Fertilizers
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                🐞 Pesticides
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                🌾 Seeds
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                🧴 Farming Tools
-                            </a>
-                        </li>
-
-                    </ul>
-
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'getaboutpage'%}">
                         <i class="bi bi-info-circle-fill"></i>
                         About
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'getcontactpage' %}">
                         <i class="bi bi-envelope-fill"></i>
                         Contact
                     </a>

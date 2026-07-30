@@ -34,6 +34,8 @@
                             <th>Password</th>
                             <th>Mobile Number</th>
                             <th>Created At</th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
 
                     </thead>
@@ -52,7 +54,20 @@
 
                             <td>{{ user.created_at }}</td>
 
-                        </tr>
+                            <td>
+                                <a href="{% url 'getupdateuserpage' user.username %}"
+                                class="btn btn-warning btn-sm">
+                                    ✏ Update
+                                </a>
+                            </td>
+
+                            <td>
+                                <a href="{% url 'deleteuser' user.username %}"
+                                class="btn btn-danger btn-sm"
+                                onclick="return confirm('Are you sure you want to delete this user?');">
+                                    🗑 Delete
+                                </a>
+                            </td>
 
                         {% endfor %}
 

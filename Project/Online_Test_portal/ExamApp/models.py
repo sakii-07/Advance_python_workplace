@@ -24,3 +24,11 @@ class UserInfo(models.Model):
 
     class Meta:
         db_table = 'user_info'
+
+class Result(models.Model):
+    username = models.ForeignKey(UserInfo, on_delete=models.CASCADE)
+    subject = models.CharField(max_length=100)
+    score = models.IntegerField()
+
+    class Meta:
+        db_table = 'result'

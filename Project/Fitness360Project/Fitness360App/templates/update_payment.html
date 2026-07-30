@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Payment | Fitness360</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/update_payment.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card payment-card shadow-lg">
+
+                <div class="card-header text-center">
+
+                    <i class="fa-solid fa-wallet payment-icon"></i>
+
+                    <h2>Update Payment</h2>
+
+                    <p>Fitness360 Smart Gym Management System</p>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form action="{% url 'updatepayment' %}" method="post">
+
+                        {% csrf_token %}
+
+                        <input type="hidden"
+                               name="payment_id"
+                               value="{{ payment.payment_id }}">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Username</label>
+
+                            <select class="form-select"
+                                    name="username"
+                                    required>
+
+                                {% for user in users %}
+
+                                <option value="{{ user.username }}"
+                                {% if payment.username.username == user.username %}selected{% endif %}>
+
+                                    {{ user.username }}
+
+                                </option>
+
+                                {% endfor %}
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Amount</label>
+
+                            <input type="number"
+                                   step="0.01"
+                                   class="form-control"
+                                   name="amount"
+                                   value="{{ payment.amount }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Payment Mode</label>
+
+                            <select class="form-select"
+                                    name="payment_mode"
+                                    required>
+
+                                <option value="Cash"
+                                {% if payment.payment_mode == "Cash" %}selected{% endif %}>
+                                    Cash
+                                </option>
+
+                                <option value="UPI"
+                                {% if payment.payment_mode == "UPI" %}selected{% endif %}>
+                                    UPI
+                                </option>
+
+                                <option value="Debit Card"
+                                {% if payment.payment_mode == "Debit Card" %}selected{% endif %}>
+                                    Debit Card
+                                </option>
+
+                                <option value="Credit Card"
+                                {% if payment.payment_mode == "Credit Card" %}selected{% endif %}>
+                                    Credit Card
+                                </option>
+
+                                <option value="Net Banking"
+                                {% if payment.payment_mode == "Net Banking" %}selected{% endif %}>
+                                    Net Banking
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Payment Date</label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   name="payment_date"
+                                   value="{{ payment.payment_date|date:'Y-m-d' }}"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label">Payment Status</label>
+
+                            <select class="form-select"
+                                    name="payment_status"
+                                    required>
+
+                                <option value="Paid"
+                                {% if payment.payment_status == "Paid" %}selected{% endif %}>
+                                    Paid
+                                </option>
+
+                                <option value="Pending"
+                                {% if payment.payment_status == "Pending" %}selected{% endif %}>
+                                    Pending
+                                </option>
+
+                                <option value="Failed"
+                                {% if payment.payment_status == "Failed" %}selected{% endif %}>
+                                    Failed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="d-grid gap-2">
+
+                            <button type="submit" class="btn btn-warning">
+
+                                <i class="fa-solid fa-floppy-disk"></i>
+
+                                Update Payment
+
+                            </button>
+
+                            <a href="{% url 'showallpayments' %}"
+                               class="btn btn-dark">
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Back
+
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

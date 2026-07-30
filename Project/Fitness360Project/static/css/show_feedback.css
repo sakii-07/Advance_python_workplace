@@ -1,0 +1,71 @@
+body{
+    background:#eef2f7;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.feedback-card{
+    background:#fff;
+    border-radius:20px;
+    padding:35px;
+}
+
+.page-title{
+    font-weight:700;
+    color:#1f2937;
+}
+
+.search-box{
+    border-radius:12px;
+    padding:12px;
+}
+
+.table{
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.table thead{
+    background:#1f2937;
+    color:white;
+}
+
+.table th{
+    padding:18px;
+    border:none;
+}
+
+.table td{
+    vertical-align:middle;
+    padding:16px;
+}
+
+.table tbody tr:hover{
+    background:#f8fafc;
+    transition:.3s;
+}
+
+.btn{
+    border-radius:8px;
+}
+
+.btn-sm{
+    width:42px;
+    height:38px;
+}
+
+.badge{
+    padding:10px 15px;
+    border-radius:20px;
+}
+
+@media(max-width:768px){
+
+.page-title{
+    font-size:28px;
+}
+
+.feedback-card{
+    padding:20px;
+}
+
+}

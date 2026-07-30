@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Fitness360</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+</head>
+<body>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-lg">
+
+                <div class="card-header text-center">
+
+                    <h2>Member Payment</h2>
+
+                    <p>Fitness360 Smart Gym Management System</p>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form action="{% url 'addpayment' %}" method="post">
+
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Select Member</label>
+
+                            <select class="form-select" name="username" required>
+
+                                <option selected disabled>Select Member</option>
+
+                                {% for user in users %}
+
+                                <option value="{{ user.username }}">
+                                    {{ user.username }}
+                                </option>
+
+                                {% endfor %}
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Amount</label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   name="amount"
+                                   placeholder="Enter Amount"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Payment Mode</label>
+
+                            <select class="form-select"
+                                    name="payment_mode"
+                                    required>
+
+                                <option selected disabled>Select Payment Mode</option>
+
+                                <option value="Cash">Cash</option>
+                                <option value="UPI">UPI</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Net Banking">Net Banking</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Payment Date</label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   name="payment_date"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label">Payment Status</label>
+
+                            <select class="form-select"
+                                    name="payment_status"
+                                    required>
+
+                                <option selected disabled>Select Status</option>
+
+                                <option value="Paid">Paid</option>
+                                <option value="Pending">Pending</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="d-grid">
+
+                            <button class="btn btn-success btn-lg">
+
+                                Submit Payment
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

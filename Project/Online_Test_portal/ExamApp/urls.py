@@ -43,6 +43,7 @@ urlpatterns = [
     path('showallresult/', views.ShowAllresult, name='showallresult'),
     path('getdeleteuserpage/', views.GetDeleteUserPage, name='getdeleteuserpage'),
 
-    path('deleteuser/<str:username>/', views.Deleteuser, name='deleteuser')
+    path('deleteuser/<str:username>/', views.Deleteuser, name='deleteuser'),
+    path('deleteuser1/', views.DeleteUser1, name='deleteuser1')
 
 ]

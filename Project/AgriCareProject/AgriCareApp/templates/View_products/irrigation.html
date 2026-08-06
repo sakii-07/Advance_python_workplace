@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation | AgriCare</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/irrigation.css' %}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <section class="page-header text-center">
+
+        <div class="container">
+
+            <i class="fa-solid fa-droplet fa-4x text-primary mb-3"></i>
+
+            <h1>Irrigation Equipment</h1>
+
+            <p>Smart irrigation solutions for efficient water management.</p>
+
+        </div>
+
+    </section>
+
+    <!-- Products -->
+
+    <section class="container py-5">
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/irrigation1.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Drip Irrigation Kit</h5>
+                        <p>Water-saving irrigation system for crops.</p>
+                        <h4 class="price">₹2,500</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/irrigation2.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Sprinkler Set</h5>
+                        <p>Uniform water distribution across fields.</p>
+                        <h4 class="price">₹1,800</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/irrigation3.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>PVC Water Pipe</h5>
+                        <p>Durable pipe for agricultural irrigation.</p>
+                        <h4 class="price">₹1,200</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/irrigation4.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Water Pump</h5>
+                        <p>High-performance irrigation water pump.</p>
+                        <h4 class="price">₹6,500</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/irrigation5.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Garden Hose</h5>
+                        <p>Flexible hose for watering gardens and farms.</p>
+                        <h4 class="price">₹950</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/irrigation6.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Micro Sprinkler</h5>
+                        <p>Ideal for orchards and vegetable farming.</p>
+                        <h4 class="price">₹1,450</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

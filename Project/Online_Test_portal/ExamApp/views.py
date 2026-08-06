@@ -273,3 +273,16 @@ def GetDeleteUserPage(request):
 def Deleteuser(request,username):
     UserInfo.objects.get(username = username).delete()
     return redirect('getshowallpage')
+
+def DeleteUser1(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        try:
+            user = UserInfo.objects.get(username=username)
+            user.delete()
+            msg = "User Deleted Successfully."
+        except UserInfo.DoesNotExist:
+            msg = "Invalid Username."
+
+        return render(request, "User/delete_user.html", {"msg": msg})
+    return render(request, "User/delete_user.html")

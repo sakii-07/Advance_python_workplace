@@ -32,4 +32,13 @@ urlpatterns = [
     path('getaboutpage/', views.GetAboutPage, name='getaboutpage'),
     path('getcontactpage/', views.GetContactPage, name='getcontactpage'),
 
+    path('fertilizers/', views.Fertilizers, name='fertilizers'),
+    path('gardercare/', views.Gardercare, name='gardercare'),
+    path('herbicides/', views.Herbicides, name='herbicides'),
+    path('irrigation/', views.Irrigation, name='irrigation'),
+    path('pesticides/', views.Pesticides, name='pesticides'),
+    path('plantcare/', views.Plantcare, name='plantcare'),
+    path('seeds/', views.Seeds, name='seeds'),
+    path('tools/', views.Tools, name='tools'),
+
 ]

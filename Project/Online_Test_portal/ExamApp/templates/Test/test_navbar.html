@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Test Portal</title>
+    <title>ExamSphere - Online Examination Portal</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/test/test_navbar.css' %}">
@@ -13,26 +13,29 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark shadow">
+    <div class="container-fluid px-4">
 
         <!-- Logo -->
-        <a class="navbar-brand fw-bold" href="#">
-             Online Test Portal
+        <a class="navbar-brand" href="{% url 'gethomepage' %}">
+            ExamSphere - Online Examination Portal
         </a>
 
         <!-- Mobile Toggle -->
         <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Navbar Content -->
         <div class="collapse navbar-collapse" id="navbarNav">
 
-            <!-- Left Menu -->
+            <!-- Center Menu -->
             <ul class="navbar-nav mx-auto">
 
                 <li class="nav-item">
@@ -50,13 +53,13 @@
             </ul>
 
             <!-- Right Side -->
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center gap-3">
 
-                <span class="username me-3">
+                <span class="username">
                     👤 {{ request.session.username }}
                 </span>
 
-                <a href="{% url 'logoutuser1' %}" class="btn btn-light">
+                <a href="{% url 'logout' %}" class="btn btn-light logout-btn">
                     Logout
                 </a>
 

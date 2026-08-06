@@ -28,7 +28,7 @@
                         Enter your username to permanently delete your account.
                     </p>
 
-                    <form action="#" method="post">
+                    <form action="{% url 'deleteuser1' %}" method="post">
 
                         {% csrf_token %}
 
@@ -52,6 +52,8 @@
                             </a>
 
                         </div>
+
+                        <h5 style="text-align: center;">{{msg}}</h5>
 
                     </form>
 

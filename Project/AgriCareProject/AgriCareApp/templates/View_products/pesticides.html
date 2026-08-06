@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesticides | AgriCare</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<section class="page-header text-center py-5">
+    <div class="container">
+        <i class="fa-solid fa-bug fa-3x text-success"></i>
+        <h1 class="fw-bold mt-3">Pesticides</h1>
+        <p class="text-muted">Protect your crops with high-quality pesticides.</p>
+    </div>
+</section>
+
+<div class="container pb-5">
+    <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card product-card">
+                <img src="{% static 'img/pesticide1.jpg' %}" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Neem Oil Spray</h5>
+                    <p>Organic pest control solution.</p>
+                    <h4 class="price">₹280</h4>
+                    <button class="btn btn-success w-100">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card product-card">
+                <img src="{% static 'img/pesticide2.jpg' %}" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Fungicide</h5>
+                    <p>Protects crops from fungal diseases.</p>
+                    <h4 class="price">₹450</h4>
+                    <button class="btn btn-success w-100">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card product-card">
+                <img src="{% static 'img/pesticide3.jpg' %}" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Insecticide</h5>
+                    <p>Effective against insects.</p>
+                    <h4 class="price">₹550</h4>
+                    <button class="btn btn-success w-100">View Details</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

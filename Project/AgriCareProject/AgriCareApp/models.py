@@ -17,7 +17,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.IntegerField()
     description = models.TextField()
-    image = models.ImageField(upload_to='products/')
+    image = models.ImageField(upload_to='media/products/')
     manufacturing_date = models.DateField()
     expiry_date = models.DateField()
 

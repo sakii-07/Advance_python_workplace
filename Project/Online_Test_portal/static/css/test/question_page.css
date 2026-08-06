@@ -4,6 +4,9 @@
     box-sizing:border-box;
     font-family:'Segoe UI',sans-serif;
 }
+.box{
+    margin-left: 100px;
+}
 
 body{
     background:#eef2f7;

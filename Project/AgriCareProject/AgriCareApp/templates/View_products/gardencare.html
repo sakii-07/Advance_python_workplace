@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Care | AgriCare</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/gardencare.css' %}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <section class="page-header text-center">
+
+        <div class="container">
+
+            <i class="fa-solid fa-tree fa-4x text-success mb-3"></i>
+
+            <h1>Garden Care</h1>
+
+            <p>Everything you need to keep your garden healthy, beautiful, and thriving.</p>
+
+        </div>
+
+    </section>
+
+    <!-- Products -->
+
+    <section class="container py-5">
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/garden1.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Garden Soil Mix</h5>
+                        <p>Premium nutrient-rich soil for plants.</p>
+                        <h4 class="price">₹450</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/garden2.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Organic Compost</h5>
+                        <p>Natural compost for healthy plant growth.</p>
+                        <h4 class="price">₹320</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/garden3.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Garden Pruner</h5>
+                        <p>Sharp pruning tool for branches and plants.</p>
+                        <h4 class="price">₹650</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/garden4.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Watering Can</h5>
+                        <p>Easy watering for indoor and outdoor plants.</p>
+                        <h4 class="price">₹550</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/garden5.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Plant Pots</h5>
+                        <p>Decorative and durable flower pots.</p>
+                        <h4 class="price">₹280</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'img/garden6.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Garden Tool Kit</h5>
+                        <p>Complete gardening tool set for daily use.</p>
+                        <h4 class="price">₹1,250</h4>
+                        <button class="btn btn-success w-100">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

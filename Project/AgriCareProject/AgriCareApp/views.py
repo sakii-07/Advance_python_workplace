@@ -149,3 +149,27 @@ def GetAboutPage(request):
 
 def GetContactPage(request):
     return render(request,'contact.html')
+
+def Fertilizers(request):
+    return render(request,'View_products/fertilizers.html')
+
+def Pesticides(request):
+    return render(request,'View_products/pesticides.html')
+
+def Herbicides(request):
+    return render(request,'View_products/herbicides.html')
+
+def Gardercare(request):
+    return render(request,'View_products/gardencare.html')
+
+def Irrigation(request):
+    return render(request,'View_products/irrigation.html')
+
+def Plantcare(request):
+    return render(request,'View_products/plantcare.html')
+
+def Seeds(request):
+    return render(request,'View_products/seeds.html')
+
+def Tools(request):
+    return render(request,'View_products/tools.html')

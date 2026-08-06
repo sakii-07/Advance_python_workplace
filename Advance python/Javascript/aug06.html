@@ -74,6 +74,41 @@
         14) toReversed
         */
 
+        let arr1 = [10,20,30,40,50]
+        arr1.push(100) // Add element at end 
+        console.log(arr1);
+
+        arr1.pop() // Remove last element 
+        console.log(arr1); 
+        
+
+        arr1.unshift(200) // Add element at beginning
+        console.log(arr1);
+        
+        arr1.shift() // Remove first element 
+        console.log(arr1);
+        
+        console.log(arr1.indexOf(20)); // Find index of element 
+
+        console.log(arr1.includes(25)); // Check if element exists 
+        
+        console.log(arr1.slice(1,3)); // Extract portion (no change to original) 
+
+        console.log(arr1.join('-')); // Convert array to string 
+
+        console.log(arr1.reverse()); // Reverse order of elements
+        
+        console.log(arr1.sort()); // Sort elements 
+         
+        console.log(arr1.concat([23,45,34])); // Merge arrays 
+
+        console.log(arr1.toString()); // Convert array to comma string
+
+        console.log(arr1.toSorted()); // Creates a sorted copy of the array without changing the original. 
+        
+        console.log(arr1.toReversed()); // Creates a reversed copy of the array without changing the original
+        
+
         /*
         object methods 
             1) keys
@@ -84,6 +119,63 @@
 
         // backticks (`) used for fstring in JS
 
+        obj = {
+            name : "Sakshi",
+            age : 22,
+            city : "Solapur"
+        }
+
+        console.log(Object.keys(obj));
+
+        console.log(Object.values(obj));
+
+        console.log(Object.entries(obj));
+
+        console.log(Object.hasOwn(obj), "name");
+        
+        let name = "Supriya"
+        let str1 = `hello ${name}`
+        console.log(str1);
+        
+
+        /* String methods */
+
+        let str2 = "The Kiran Academy"
+
+        console.log(str2.toUpperCase());
+
+        console.log(str2.toLowerCase());
+
+        console.log(str2.trim());
+
+        console.log(str2.slice(1,6));
+
+        console.log(str2.substring(1,6));
+
+        console.log(str2.replace("Kiran","Sakshi"));
+
+        console.log(str2.includes("The"));
+
+        console.log(str2.indexOf('i'));
+
+        console.log(str2.split());
+
+        console.log(str2.concat(["","pune"]));
+
+        console.log(str2.charAt(5));
+
+        // Operators
+
+        num1 = 20
+
+        num2 = 45
+
+        console.log(num1 > 10 && num2 < 60);
+
+        console.log(num1 < 10 || num2 > 60);
+
+        console.log(!false);
+        
     </script>
 
 </body>

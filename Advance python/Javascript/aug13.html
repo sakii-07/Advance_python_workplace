@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyncronous features</title>
+</head>
+<body>
+
+    <script>
+        // console.log(10);
+        // console.log(20);
+        
+        // setTimeout(()=>{
+        //     console.log("settimeout");
+        //     console.log(10/10);  
+        // },3000)
+
+        // function SearchId(getid,callback){
+        //     setTimeout(()=>{
+        //         console.log("get id successfully");
+        //         console.log(getid);   
+        //         if (callback){
+        //             callback()
+        //         }
+        //     },3000)
+        // }
+
+
+
+        // let p1 = new Promise(
+        //     (resolve,reject)=>{
+        //         setTimeout(()=>{
+        //             let success = true
+        //             if (success){
+        //                 resolve("Resolve")
+        //             }else{
+        //                 reject("Reject")
+        //             }
+        //         },3000)
+        //     }
+        // )
+        // console.log(p1)
+        
+
+        // promise chaining
+
+        // function Search(getid){
+        //     return new Promise((resolve,reject)=>{
+        //         setTimeout(()=>{
+        //             if (getid){
+        //                 resolve("get id successfully..")
+        //                 console.log(getid)
+        //             }else{
+        //                 reject("Invalid")
+        //             }
+        //         },3000)
+        //     })
+        // }
+        // Search(101)
+        // .then((res)=>{
+        //     console.log(res);
+        //     return Search(102)
+        // })
+        // .then((res)=>{
+        //     console.log(res);
+        //     return Search()
+        // })
+        // .then((res)=>{
+        //     console.log(res)
+        // })
+        // .catch((err)=>{
+        //     console.log(err); 
+        // })
+
+
+        // async await
+
+        // function SearchId1(getid){
+        //     return new Promise((resolve,reject)=>{
+        //         setTimeout(()=>{
+        //             console.log("get id successfully");
+        //             console.log(getid);
+        //             resolve()
+        //         },3000);
+        //     })
+        // }
+        // async function Getid(){
+        //     await SearchId1(101)
+        //     await SearchId1(102)
+        // }
+        // Getid()
+
+        // function SearchId3(getid){
+        //     return new Promise((resolve,reject)=>{
+        //         setTimeout(()=>{
+        //             if (getid){
+        //             resolve("get id successfully")
+        //             console.log(getid)
+        //             }else{
+        //                 reject("Id not found")
+        //             }
+        //         },3000)
+        //     })
+        // }
+
+        // SearchId3(101)
+        // .then((res)=>{
+        //     console.log(res)
+        //     return SearchId3(102)
+        // })
+        // .then((res)=>{
+        //     console.log(res)
+        // })
+        // .catch((err)=>{
+        //     console.log(err)
+        // })
+        // .finally((res)=>{
+        //     console.log("Completd")
+        // })
+
+
+        function SearchId4(getid){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    if (getid){
+                        console.log("Get id successfully");
+                        console.log(getid);
+                        resolve()
+                    }
+                },3000)
+            })
+        }
+
+        async function GetdID(){
+            await SearchId4(101)
+            await SearchId4(102)
+        }
+        GetdID()
+    </script>
+    
+</body>
+</html>

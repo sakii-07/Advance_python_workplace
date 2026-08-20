@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterative Statement Task</title>
+</head>
+<body>
+
+   <script>
+    // // question - 1
+
+    //     var attemts = 0
+    //     let password = '12345'
+    //     while(attemts<3){
+    //         var p = prompt("Enter password : ")
+    //         if (password == p){
+    //             console.log("Successful login ");       
+    //             break
+    //         }
+    //         else{
+    //             console.log("Invalid Pin")
+    //         }
+    //         attemts++
+    //     }
+    //     if (attemts == 3){
+    //         console.log("account temporarily blocked ");   
+    //     }
+
+    // // Question - 2
+
+        // let patient_temperature = []
+        // while (true){
+        //     let temp = Number(prompt("Enter temperature"))
+        //     if (temp === -1){
+        //         document.writeln("Thank You")
+        //         break
+        //     }else{
+        //         patient_temperature.push(temp)
+        //     }
+        // }
+        // document.writeln("Total readings recorded :"+patient_temperature.length)
+        // let sum = 0
+        // for(let i = 0;i<patient_temperature.length;i++){
+        //     sum = sum + patient_temperature[i]
+        // }
+        // if (patient_temperature.length > 0) {
+        //     let avg_temp = sum / patient_temperature.length
+        //     document.writeln("Average temperature: " + avg_temp)
+        // } else {
+        //     document.writeln("No temperature readings recorded.")
+        // }
+
+    // // Question - 3
+
+        // let cart = []
+        // while (true){
+        //     let price = Number(prompt("Item Price"))
+        //     if (price === 0){
+        //             break
+        //     }
+        //     if (price > 0){
+        //             cart.push(price)
+        //         }else{
+        //             console.log("Number must be positive")
+        //         }
+        // }
+        // total_bill = 0
+        // for(let i = 0;i<cart.length;i++){
+        //     total_bill += cart[i]
+        // }
+        // console.log("Cart : "+cart);
+        // console.log("Total Bill : "+total_bill);
+        // console.log("Number of products : "+cart.length);
+        
+
+    // // Question - 4
+    //     console.log("Student Attendance : ");
+        
+    //     for(let roll = 1;roll <= 40; roll++){
+    //         console.log(roll);
+            
+    //     }
+
+    // // Question - 5 
+
+    //     let discount = [25,30,22,34,13,27,43]
+    //     for(let i = 0; i < discount.length; i++){
+    //         console.log("Day "+(i+1)+" Discount Available for Today : "+discount[i]);
+            
+    //     }
+
+    // // Question - 6
+        // let emp_id = 10
+        // while (true){
+        //     let input = prompt("Enter Employee ID ")
+        //     if(input === ""){
+        //         console.log("Employee ID cannot be empty");
+        //         break  
+        //     }
+        //     let id = Number(input)
+        //     if (id === emp_id){
+        //         console.log("Valid Employee ID accepted")
+        //         break
+        //     }else{
+        //         console.log("Invalid Id");            
+        //     }
+        // }
+
+        // // Question - 7
+            // let telecom = []
+            // while (true){
+            //     let recharge = Number(prompt("Enter recharge"))
+            //     if (recharge === 0){
+            //             break
+            //     }
+            //     if (recharge > 0){
+            //             telecom.push(recharge)
+            //         }else{
+            //             console.log("Recharge must be greater than zero")
+            //         }
+            // }
+            // total_recharge = 0
+            // for(let i = 0;i<telecom.length;i++){
+            //     total_recharge += telecom[i]
+            // }
+            // console.log("Cart : "+telecom);
+            // console.log("Total Bill : "+total_recharge);
+        
+        // // Question - 8
+            // console.log("Reservation systems");
+            
+            // for(let i = 1;i<=30;i++){
+            //     console.log("Seat No : "+i);
+                
+            // }
+
+    // // Question - 9
+        // var attemts = 0
+        // let password = '12345'
+        // while(attemts<5){
+        //     var p = prompt("Enter password : ")
+        //     if (password == p){
+        //         console.log("Access Granted ");       
+        //         break
+        //     }
+        //     else{
+        //         console.log("Invalid Pin")
+        //     }
+        //     attemts++
+        // }
+        // if (attemts == 3){
+        //     console.log("Account Locked");   
+        // }
+
+    // // Question - 10
+        // let product_qnty = []
+        // while (true){
+        //     let qnty = Number(prompt("Enter Quantity"))
+        //     if (qnty === 0){
+        //         console.log("Thank You")
+        //         break
+        //     }else{
+        //         product_qnty.push(qnty)
+        //     }
+        // }
+        // let sum = 0
+        // for(let i = 0;i<product_qnty.length;i++){
+        //     sum = sum + product_qnty[i]
+        // }
+        // console.log("Total quantity :"+sum)
+
+    // // Question - 11
+
+
+    // // Question - 12
+    
+    // for(let i=1;i<=25;i++){
+    //     if (i == 13){
+    //         continue
+    //     }
+    //     console.log("Tokan : "+i)
+    // }
+
+    // // Question - 13
+    // let stock = 100
+    // while(stock > 0){
+    //     qnty = Number(prompt("Enter order quatity"))
+    //     if (qnty <= 0){
+    //     print("Order quantity must be greater than 0")
+    //     }
+    //     else if (stock < qnty){
+    //     print("Order rejected! Only", stock, "products are available.")
+    //     }else{
+    //     stock = stock - qnty
+    //     print("Order accepted!")
+    //     print("Remaining stock:", stock)
+    //     }
+    // }
+
+    // // Question - 14
+        // let totalQuestions = 20
+        // for (let question = 1; question <= totalQuestions; question++) {
+        //     console.log("Question " + question)
+
+        //     let response = prompt("Do you want to continue? (yes/no)")
+
+        //     if (response === "no") {
+        //         console.log("Exam terminated.")
+        //         break
+        //     }
+        // }
+
+        // if (question > totalQuestions) {
+        //     console.log("Exam completed.")
+        // }
+
+    // // Question -15
+   </script>
+    
+</body>
+</html>

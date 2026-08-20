@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM- document object module</title>
+</head>
+<body>
+<!-- 
+    <h1 id="head">DOM</h1>
+    <button onclick="Demo()">Change color</button>
+
+    <h1 class="cls">h22222</h1>
+    <h1 class="cls">h34554</h1>
+
+    <a href="www.google.com" id="a1">Google</a>
+
+    <h4>Javascript</h4>
+
+    <script>
+        function Demo(){
+            head = document.getElementById("head")
+            head.style.color = 'red'
+        }
+
+        // cls = document.getElementsByClassName('cls')
+        // for (let i = 0; i<=cls.length;i++){
+        //     cls[i].style.color = 'blue'
+        // }
+
+        a1 = document.getElementById('a1')
+        console.log(a1.getAttribute('href'))
+
+        a1.setAttribute("href","www.microsoft.com")
+        console.log(a1.getAttribute('href'))
+
+        cls1 = document.getElementsByClassName('cls')
+        cls1[0].innerText = 'Hello'
+
+        cls1[1].innerHTML = '<h1>Hii</h1>'
+
+        h4 = document.getElementsByTagName("h4")
+        h4[0].classList.add("classlist")
+        console.log(h4[0].getAttribute("class"));
+
+        h4[0].classList.remove("class")
+
+        create = document.createElement("h5")
+        create.innerText = "This is heading5"
+        create.classList.add("heading5")
+
+        document.body.appendChild(create)
+
+        heading5 = document.getElementsByClassName("heading5")
+        heading5[0].remove()
+        
+        
+    </script> -->
+
+    <h1 id="head">Heading</h1>
+    <button onclick="Demo()">Change Color</button>
+
+    <h2 class="cls">Heading 2</h2>
+    <h2 class="cls">Heading 3</h2>
+
+    <a href="www.google.com">Google</a>
+
+    <script>
+        function Demo(){
+            head = document.getElementById('head')
+            head.style.color = "red"
+        }
+        cls = document.getElementsByClassName('cls')
+        cls[0].style.color = "blue"
+
+        a = document.getElementsByTagName('a')
+        a[0].style.color = "green"
+
+        create = document.createElement("h4")
+        create.innerText = 'This is heading'
+        document.body.appendChild(create)
+
+        create.classList.add("heading4")
+        console.log(create.getAttribute("class"))
+        create.setAttribute("class","heading5")
+        console.log(create.getAttribute("class"))
+        create.remove()
+
+    </script>
+    
+</body>
+</html>

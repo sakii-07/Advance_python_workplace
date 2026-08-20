@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+
+    <script>
+
+        function addition(num1,num2){
+            let add = num1 + num2
+            console.log(add)
+        }
+
+        addition(10,20);
+
+        // arrow function
+        let add = (num1,num2) =>{return num1+num2}
+        console.log(add(100,2000));
+        
+
+        // Immediately invoke function expression (IIFE)
+
+        (function (){
+            console.log("Executed Immediatly");  //   
+        })();
+
+        (() => {
+            console.log("arrow IIFE");
+            
+        })();
+
+        let arr = [1,15,3,6,2]
+        arr.sort((a,b) => a-b)  // numbers are not sorted directly in js we need to write comparision funtion 
+        console.log(arr); // if a-b gives positive number then first number shifted right side
+        
+
+    </script>
+    
+</body>
+</html>xxxx

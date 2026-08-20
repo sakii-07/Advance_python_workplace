@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+<!-- 
+    <h2 id="h2">document Object model</h2>
+    <p id="para">Show Content</p>
+
+
+
+    <script>
+        let h2 = document.getElementById('h2')
+        let para = document.getElementById('para')
+
+        h2.addEventListener('click',()=>{
+            h2.style.backgroundColor = "green"
+        })
+
+        h2.addEventListener('mouseover',()=>{
+           h2.style.display = "none" 
+        })
+
+        // h2.addEventListener('mouseout',()=>{
+        //    h2.innerHTML("<marquee><h2>document Object model</h2></marquee>") 
+        // })
+
+        function ShowContent(){
+            h2.style.display = 'inline-block'
+        }
+
+        para.addEventListener('dblclick',ShowContent)
+
+        // BOM - browser object model 
+
+        // navigator object
+
+        console.log(navigator.appName);
+        console.log(navigator.appVersion);
+        console.log(navigator.appCodeName);
+        console.log(navigator.userAgent);
+        console.log(navigator.cookieEnabled);
+        console.log(navigator.platform);
+        console.log(navigator.language);
+
+        // screen object
+        console.log(screen.colorDepth);
+        console.log(screen.availHeight);
+        console.log(screen.availWidth);
+        console.log(screen.width);
+        console.log(screen.height);
+        console.log(screen.pixelDepth);
+        
+    </script> -->
+
+    <h1 id="title">Hello</h1>
+    <h2 id="h2">Document object model</h2>
+
+    <p class="msg">hi</p>
+    <button onclick="alert('here')">Click here</button>
+    <p class="msg">Hello</p>
+    <button onclick="Demo()"></button>
+    
+    <script>
+
+        let el = document.getElementById('title');
+        el.style.color='red';
+
+        let items = document.getElementsByClassName('msg');
+        items[0].style.color = "blue";
+
+        let h2 = document.getElementById('h2');
+        h2.innerHTML = "<marquee>Document object model </marquee>";
+        h2.style.color = "pink";
+
+        function Demo(){
+
+        }
+
+    console.log(navigator.appName);
+    console.log(navigator.appVersion);
+    console.log(navigator.appCodeName);
+    console.log(navigator.userAgent);
+    console.log(navigator.language);
+    console.log(navigator.platform);
+    console.log(navigator.cookieEnabled);
+    console.log("-------------------------------")
+
+    console.log(screen.colorDepth);
+    console.log(screen.availHeight);
+    console.log(screen.availWidth);
+    console.log(screen.height);
+    console.log(screen.width);
+    console.log(screen.pixelDepth);
+
+</script>
+    
+</body>
+</html>

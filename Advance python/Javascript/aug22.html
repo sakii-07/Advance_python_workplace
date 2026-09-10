@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task</title>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-6 box1">
+            <form action="">
+                <label for="inp1">Username : </label>
+                <input id="inp1" type="text" placeholder="Enter Userame"><br>
+                <label for="inp2">Password</label>
+                <input id="inp2" type="password" placeholder="Password"><br>
+                <button type="button" onclick="GetData()">Submit</button>
+            </form>
+        </div>
+        <div class="col-6 box2"></div>
+    </div>
+
+    <script>
+        function GetData(){
+            let inp1 = document.getElementById('inp1')
+            let txt1 = inp1.value;
+
+            let inp2 = document.getElementById('inp2')
+            let txt2 = inp2.value;
+
+            let h1 = document.createElement('h1');
+            let box2 = document.getElementsByClassName('box2')[0];
+
+            box2.appendChild(h1);
+            h1.innerHTML = txt1;
+
+            let h2 = document.createElement('h1');
+
+            box2.appendChild(h2);
+            h2.innerHTML = txt2;
+        }
+    </script>
+    
+</body>
+</html>

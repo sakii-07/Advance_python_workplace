@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <script>
+
+        let arr3 = [1,2,3,4,5,6]
+
+        let modarr3 = arr3.filter((n) => n != 3)
+
+        console.log(modarr3)
+
+        let modbymap = arr3.map((n) => {
+            if (n == 3) {
+                return;
+            }else{
+                return n;
+            }
+        });
+
+        console.log(modbymap);
+
+
+        let age=12;
+        if (age>18){
+            console.log("allowed");
+            }
+            else{
+                console.log("not allowed")
+            }
+
+
+        const isEven = (num)=> num % 2 ===0;
+        console.log(isEven(4));
+        console.log(isEven(5));
+        
+        // let employees = [
+        // {name: "Amit", salary: 30000},
+        // {name: "Priya", salary: 45000},
+        // {name: "Rahul", salary: 25000},
+        // {name: "Sneha", salary: 60000}
+        // ];
+
+        // let inc_sal = employees.map((n)=>{
+        //     n.salary = n.salary + (n.salary * 0.10)
+        //     return n;
+        // })
+
+        // console.log(inc_sal)
+
+        // Create a new array containing only employee names.
+        let names = employees.map((n)=>{
+            return n.name;
+        })
+        console.log(names);
+
+        // // or 
+
+        let name = employees.map((n)=>n.name)
+        console.log(name);
+
+        // Display employees whose salary is above ₹40,000.
+        let sal = employees.filter((n)=>(n.salary > 40000))
+        console.log(sal);
+        
+
+        // Calculate the total salary.
+
+        let total = 0;
+        employees.forEach((n)=> {
+            total= n.salary + total 
+        })
+        console.log(total)
+
+        // 2. E-Commerce Product Price Update
+
+        let products = [
+            { name: "Laptop", price: 50000 },
+            { name: "Mouse", price: 800 },
+            { name: "Keyboard", price: 1500 },
+            { name: "Monitor", price: 12000 }
+        ];
+
+        // apply 15% discount on every product
+
+        products.forEach((n)=>{
+            n.price = n.price - (n.price * 0.15)
+        })
+        console.log(products)
+
+        // Then calculate the total amount after discount.
+
+        let total_dis = 0;
+
+        products.forEach((n)=>{
+            total_dis = total_dis + n.price
+        })
+        console.log(total_dis);
+
+    </script>
+    
+</body>
+</html>

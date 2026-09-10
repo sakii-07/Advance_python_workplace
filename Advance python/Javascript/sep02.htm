@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+
+    <script>
+
+        arr = [10,30,70,"sakshi", true, 10.2, "supriya","gayatri",null]
+
+        // Insert
+        arr.push(30)
+        console.log(arr);
+
+        arr.unshift(200)
+        console.log(arr);
+
+        // update
+        arr[1] = 10000
+        console.log(arr);
+
+        // delete
+        arr.pop()
+        console.log(arr);
+
+        arr.shift()
+        console.log(arr);
+
+        // login operation using find
+
+        user = [
+            {username:"sakshi", password:"123"},
+            {username:"gayatri", password:"123"},
+            {username:"supriya", password:"123"},
+        ]
+
+        let uname = "sakshi"
+        let passwd = "123"
+
+        let u = user.find((n) => n.username === uname && n.password === passwd);
+
+        if (u){
+            console.log("Login successfully...")
+        }else{
+            console.log("Invalid username ...")
+        }
+
+        array = [1,2,3,4,5,'khushbu', 'mansi', true , 23.09]
+
+        //#insert
+
+        array.push('Anushka')
+        console.log(array)
+
+        array.unshift(600)
+        console.log(array)
+
+        //delete
+
+        array.pop()
+        console.log(array)
+
+        //shift
+        array.shift()
+        console.log(array)
+
+        //update
+        array[2] ='python'
+        console.log(array)
+
+        //login aap
+
+        userdata = [
+            {username:"Khushbu",password:"khushbu12345"},
+            {username:"Anushka", password:"anushka35"},
+            {username: "Ganesh", password : "ganesh8678"}
+        ]
+
+        username=prompt("Enter username")
+        pass=prompt("Enter password")
+
+        userfind= userdata.find((n)=>n.username==username && n.password==pass)
+
+        if(userfind){
+            console.log("Login Successfully")
+        }
+        else{
+            console.log("Invalid Username")
+        }
+
+        userfind2=userdata.find((n)=>n.username === 'Khushbu' && n.username === 'Anushka')
+
+        if(userfind2){
+            console.log("correct")
+        }
+        else{
+            console.log("Incorrect")
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

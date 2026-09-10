@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Management Dashboard</title>
+
+    <!-- Bootstrap 5.3.7 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ================= SIDEBAR ================= */
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: #212529;
+            padding-top: 20px;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            text-align: center;
+            font-size: 23px;
+            font-weight: bold;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .logo i {
+            color: #0d6efd;
+            margin-right: 8px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 5px 12px;
+        }
+
+        .sidebar ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #adb5bd;
+            padding: 13px 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a i {
+            width: 25px;
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        /* ================= MAIN ================= */
+
+        .main-content {
+            margin-left: 250px;
+            min-height: 100vh;
+        }
+
+        /* ================= TOP NAVBAR ================= */
+
+        .top-navbar {
+            height: 70px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .top-navbar h5 {
+            margin: 0;
+            font-weight: 600;
+            color: #343a40;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ================= DASHBOARD ================= */
+
+        .dashboard-container {
+            padding: 30px;
+        }
+
+        .welcome {
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .welcome p {
+            color: #6c757d;
+        }
+
+        /* ================= STAT CARDS ================= */
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .stat-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .icon-blue {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+        }
+
+        .icon-green {
+            background-color: #e5f7ed;
+            color: #198754;
+        }
+
+        .icon-orange {
+            background-color: #fff1df;
+            color: #fd7e14;
+        }
+
+        .icon-purple {
+            background-color: #eee5ff;
+            color: #6f42c1;
+        }
+
+        .stat-card h3 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #6c757d;
+            margin: 0;
+        }
+
+        /* ================= QUICK ACTION ================= */
+
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+            height: 100%;
+        }
+
+        .section-title {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 15px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            color: #343a40;
+            margin-bottom: 12px;
+            transition: 0.3s;
+        }
+
+        .action-btn:hover {
+            background-color: #f8f9fa;
+            border-color: #0d6efd;
+            color: #0d6efd;
+        }
+
+        .action-btn i {
+            width: 40px;
+            font-size: 20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            .sidebar {
+                width: 70px;
+            }
+
+            .logo span,
+            .sidebar ul li a span {
+                display: none;
+            }
+
+            .sidebar ul li a {
+                justify-content: center;
+            }
+
+            .sidebar ul li a i {
+                margin-right: 0;
+            }
+
+            .main-content {
+                margin-left: 70px;
+            }
+
+            .top-navbar {
+                padding: 0 15px;
+            }
+
+            .dashboard-container {
+                padding: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-users"></i>
+
+        <span>Employee MS</span>
+
+    </div>
+
+
+    <ul>
+
+        <!-- Dashboard -->
+
+        <li>
+
+            <a href="{% url 'dashboard' %}"
+               class="active">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Add Employee -->
+
+        <li>
+
+            <a href="{% url 'addemployee' %}">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                <span>Add Employee</span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Show Employees -->
+
+        <li>
+
+            <a href="{% url 'showemployee' %}">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>All Employees</span>
+
+            </a>
+
+        </li>
+
+        <li class="mt-4">
+
+            <a href="#">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main-content">
+
+
+    <!-- TOP NAVBAR -->
+
+    <nav class="top-navbar">
+
+        <h5>
+            Employee Management System
+        </h5>
+
+
+        <div class="profile">
+
+            <div class="profile-icon">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <span>
+                Admin
+            </span>
+
+        </div>
+
+    </nav>
+
+
+    <!-- DASHBOARD -->
+
+    <div class="dashboard-container">
+
+
+        <!-- Welcome -->
+
+        <div class="welcome">
+
+            <h2>
+                Dashboard
+            </h2>
+
+            <p>
+                Welcome to Employee Management System
+            </p>
+
+        </div>
+
+
+        <!-- ================= STAT CARDS ================= -->
+
+        <div class="row g-4">
+
+
+            <!-- Total Employees -->
+
+            <div class="col-xl-3 col-md-6">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon icon-blue">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <h3>
+                        {{ total_employees|default:"0" }}
+                    </h3>
+
+                    <p>
+                        Total Employees
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Departments -->
+
+            <div class="col-xl-3 col-md-6">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon icon-green">
+
+                        <i class="fa-solid fa-building"></i>
+
+                    </div>
+
+                    <h3>
+                        {{ total_departments|default:"0" }}
+                    </h3>
+
+                    <p>
+                        Departments
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Average Salary -->
+
+            <div class="col-xl-3 col-md-6">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon icon-orange">
+
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                    </div>
+
+                    <h3>
+                        ₹{{ average_salary|default:"0" }}
+                    </h3>
+
+                    <p>
+                        Average Salary
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- New Employees -->
+
+            <div class="col-xl-3 col-md-6">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon icon-purple">
+
+                        <i class="fa-solid fa-user-clock"></i>
+
+                    </div>
+
+                    <h3>
+                        {{ new_employees|default:"0" }}
+                    </h3>
+
+                    <p>
+                        New Employees
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= BOTTOM SECTION ================= -->
+
+        <div class="row g-4 mt-2">
+
+
+            <!-- Quick Actions -->
+
+            <div class="col-md-6">
+
+                <div class="section-card">
+
+                    <div class="section-title">
+
+                        Quick Actions
+
+                    </div>
+
+
+                    <a href="{% url 'addemployee' %}"
+                       class="action-btn">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        <span>
+                            Add New Employee
+                        </span>
+
+                    </a>
+
+
+                    <a href="{% url 'showemployee' %}"
+                       class="action-btn">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <span>
+                            View All Employees
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- System Information -->
+
+            <div class="col-md-6">
+
+                <div class="section-card">
+
+                    <div class="section-title">
+
+                        Employee Management
+
+                    </div>
+
+
+                    <p class="text-muted">
+                        Manage your organization's employees
+                        from one place.
+                    </p>
+
+
+                    <div class="mt-4">
+
+                        <div class="d-flex justify-content-between mb-2">
+
+                            <span>
+                                Employee Records
+                            </span>
+
+                            <strong>
+                                Manage
+                            </strong>
+
+                        </div>
+
+                        <div class="progress"
+                             style="height: 8px;">
+
+                            <div class="progress-bar"
+                                 style="width: 85%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <div class="d-flex justify-content-between mb-2">
+
+                            <span>
+                                Employee Information
+                            </span>
+
+                            <strong>
+                                Updated
+                            </strong>
+
+                        </div>
+
+                        <div class="progress"
+                             style="height: 8px;">
+
+                            <div class="progress-bar bg-success"
+                                 style="width: 95%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+
+</html>
